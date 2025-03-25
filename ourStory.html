@@ -64,7 +64,7 @@
 
     <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-    <script src="script.js"></script>
+
 
 
 </header>
@@ -89,60 +89,63 @@
         <p>Abdallah Wasef started small, in 1997, he started trading high-quality Ethiopian sesame seeds, and eventually founded Abdallah Wasef and Sons with his sons, focusing on quality.</p>
         <p>He later partnered with his cousins to open Har Bracha Tahini, using traditional methods to produce smooth, flavorful tahini.</p>
         <p>Har Bracha Tahini quickly gained international recognition for its premium products and now exports globally, staying true to the family’s vision.</p>
-        <button class="history-btn">Our History →</button>
+        <a href="ourHistory.html" class="history-btn">Our History →</a>
+    </div>
+</div>
+<div class="container_menu">
+
+    <h3>Our Core Values</h3>
+    <h1>The Har Bracha Tahini <span class="highlight">Pillars</span></h1>
+    <p>Our values are rooted in authenticity, quality, and tradition. We craft tahini with pure ingredients, honoring time-honored methods, and respecting our heritage and customers.</p>
+
+    <div class="products">
+        <div class="product" onclick="openModal('tahiniModal')">
+            <img src="img/ourTahini.webp" alt="Tahini">
+            <div class="info">
+                <h2>Tahini</h2>
+                <div class="plus">+</div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="img/ourHalva.png" alt="Halva">
+            <div class="info">
+                <h2>Halva</h2>
+                <div class="plus"  onclick="openModal('halvaModal')">+</div>
+            </div>
+        </div>
+        <div class="product" onclick="openModal('comingModal')">
+            <img src="img/Coming_Soon.png" alt="coming">
+            <div class="info">
+                <h2>Coming Soon</h2>
+                <div class="plus">+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="tahiniModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('tahiniModal')"> &times;</span>
+        <h2>Tahini</h2>
+        <p><strong>Purity - </strong> We prioritize natural ingredients, using only the finest sesame seeds to create a tahini that’s pure, flavorful, and rich in nutrients.</p>
+        <p><strong>Tradition - </strong> Our tahini is crafted with time-honored techniques, preserving the authentic stone-grinding process that brings out the depth of flavor.</p>
+        <p><strong>Quality - </strong> Each jar of tahini reflects our commitment to excellence, with rigorous standards at every step to ensure smoothness, consistency, and taste.</p>
+        <p><strong>Health - </strong> We believe in producing a tahini that not only tastes good but also supports a healthy lifestyle, perfect for those who value nutrition.</p>
+    </div>
+</div>
+<div class="modal" id="halvaModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('halvaModal')">&times;</span>
+        <h2>Halva</h2>
+        <p><strong>Craftsmanship - </strong> Our halva is handmade with care, blending quality ingredients to achieve the perfect texture and flavor.</p>
+        <p><strong>Authenticity - </strong> We embrace the rich tradition of halva making, honoring recipes and methods that have stood the test of time.</p>
+        <p><strong>Indulgence - </strong> Halva is about enjoyment, and we create flavors that bring a sense of sweetness and delight to every bite, using natural ingredients.</p>
+        <p><strong>Wellness - </strong> While indulgent, our halva is also a balanced treat, rich in nutrients like calcium and iron, making it a mindful choice for health-conscious individuals.</p>
     </div>
 </div>
 
-<div class="container-menu">
-    <section class="core-values">
-        <h2>Our Core Values</h2>
-        <h1>The Har Bracha Tahini <span class="highlight">Pillars</span></h1>
-        <p>Our values are rooted in authenticity, quality, and tradition. We craft tahini with pure ingredients, honoring time-honored methods, and respecting our heritage and customers.</p>
-    </section>
-
-    <div class="products">
-        <div class="product" id="tahini">
-            <img src="img/ourTahini.webp" alt="Tahini Products">
-            <div class="lable">
-                <h3>Tahini</h3>
-                <button class="product-button">+</button>
-            </div>
-        </div>
-        <div class="product" id="halva">
-            <img src="img/ourHalva.png" alt="Halva Products">
-            <div class="lable">
-                <h3>Halva</h3>
-                <button class="product-button" >+</button>
-            </div>
-        </div>
-        <div class="product" id="flavoured-tahini">
-            <img src="img/Coming_Soon.png" alt="Flavoured Tahini">
-            <div class="lable">
-                <h3>Flavoured Tahini</h3>
-
-                <a href="#" class="product-button">
-                    <span class="arrow">+</span>
-                </a>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal" id="modal-tahini">
-        <h2>Tahini</h2>
-        <p><strong>Purity:</strong> We prioritize natural ingredients, using only the finest sesame seeds to create a tahini that’s pure, flavorful, and rich in nutrients.</p>
-        <p><strong>Tradition:</strong> Our tahini is crafted with time-honored techniques, preserving the authentic stone-grinding process that brings out the depth of flavor.</p>
-        <p><strong>Quality:</strong> Each jar of tahini reflects our commitment to excellence, with rigorous standards at every step to ensure smoothness, consistency, and taste.</p>
-        <p><strong>Health:</strong> We believe in producing a tahini that not only tastes good but also supports a healthy lifestyle, perfect for those who value nutrition.</p>
-    </div>
-    <div class="modal" id="modal-halva">
-        <h2>Halva</h2>
-        <p><strong>Craftsmanship:</strong> Our halva is handmade with care, blending quality ingredients to achieve the perfect texture and flavor.</p>
-        <p><strong>Authenticity:</strong> We embrace the rich tradition of halva making, honoring recipes and methods that have stood the test of time.</p>
-        <p><strong>Indulgence:</strong> Halva is about enjoyment, and we create flavors that bring a sense of sweetness and delight to every bite, using natural ingredients.</p>
-        <p><strong>Wellness:</strong> While indulgent, our halva is also a balanced treat, rich in nutrients like calcium and iron, making it a mindful choice for health-conscious individuals.</p>
-    </div>
-
-    <div class="modal" id="modal-flavoured-tahini">
+<div class="modal" id="comingModal">
+    <div class="modal-content">
+        <span class="plus close" onclick="closeModal('comingModal')">&times;</span>
         <h2>Flavoured Tahini</h2>
         <p>Upcoming, a fresh innovation set to astonish globally.</p>
     </div>
@@ -219,6 +222,6 @@
 </footer>
 
 
-
+<script src="script.js"></script>
 </body>
 </html>
