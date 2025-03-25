@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="contactUs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+<div class="head">
+  <div class="container">
+    <div class="icons1">
+      <ul>
+        <li> <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"> </i></a></li>
+        <li> <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
+      </ul>
+    </div>
+    <div class= "cart-icon" onclick="openCart()">
+      <a><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="navbar">
+
+    <a href="index.html" class="logo-img"> <img src="img/icon.png" alt="logo"/></a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link">Catalog</a></li>
+      <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a> </li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+
+    <div class="sign-in">
+
+      <a href="#"> <i class="fa-regular fa-user"></i></a>
+      <span>Sign In</span>
+    </div>
+
+
+
+
+
+  </div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Cart</h2>
+      <button class="close-btn" onclick="closeCart()">✖</button>
+    </div>
+    <div class="cart-content">
+      <h3>Your cart is currently empty.</h3>
+      <p>Not sure where to start? Try these collections:</p>
+      <button class="continue-btn">Continue Shopping ➜</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+  <script src="script.js"></script>
+
+
+</header>
+
+
+
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <a href="https://www.google.com/maps/place/Samaritan+milling+plant/@32.2040109,35.2791385,14.06z/data=!4m6!3m5!1s0x151ce090bcfaba83:0x316942445bb09476!8m2!3d32.2042361!4d35.2727401!16s%2Fg%2F11c57dggd5?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-btn">
+        Our Location →
+      </a>
+      <form action="#" method="POST">
+        <input class="name" type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit" class="send-btn">Send message</button>
+      </form>
+    </div>
+
+    <!-- Map Section -->
+    <div class="contact-map">
+    <img src="img/map.png" alt="map" class="map-img">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="info-container">
+  <div class="info-box">
+    <i class="fas fa-headset icon"></i>
+    <h3>Customer service</h3>
+    <p>It’s not actually free we just price it into the products.</p>
+  </div>
+  <div class="info-box">
+    <i class="fas fa-truck icon"></i>
+    <h3>Fast Free Shipping</h3>
+    <p>Yes, We do offer Free shipping!</p>
+  </div>
+  <div class="info-box">
+    <i class="fas fa-lock icon"></i>
+    <h3>Secure payment</h3>
+    <p>Your payment information is processed securely</p>
+  </div>
+</div>
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Left Section: Information & Contact -->
+    <div class="footer-info">
+      <h3>Information</h3>
+      <ul>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Catalog</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+      <div class="footer-contact">
+        <p><a href="tel:+972585218207">+ (972) 585218207</a></p>
+        <p><a href="mailto:jad@harbracha.com">jad@harbracha.com</a></p>
+      </div>
+    </div>
+
+    <!-- Right Section: Newsletter & Social Media -->
+    <div class="footer-newsletter">
+      <h3>Stay in the loop with our weekly newsletter</h3>
+      <form action="#">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">➜</button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

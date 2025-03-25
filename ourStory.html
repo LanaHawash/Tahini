@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Story</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="ourStory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+<div class="head">
+    <div class="container">
+        <div class="icons1">
+            <ul>
+                <li> <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"> </i></a></li>
+                <li> <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+        <div class= "cart-icon" onclick="openCart()">
+            <a><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="navbar">
+
+        <a href="index.html" class="logo-img"> <img src="img/icon.png" alt="logo"/></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">Catalog</a></li>
+            <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a> </li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+
+        <div class="sign-in">
+
+            <a href="#"> <i class="fa-regular fa-user"></i></a>
+            <span>Sign In</span>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Cart</h2>
+            <button class="close-btn" onclick="closeCart()">✖</button>
+        </div>
+        <div class="cart-content">
+            <h3>Your cart is currently empty.</h3>
+            <p>Not sure where to start? Try these collections:</p>
+            <button class="continue-btn">Continue Shopping ➜</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <script src="script.js"></script>
+
+
+</header>
+
+<div class="hero-section">
+    <img src="img/factory2.jpg" alt="Company Building">
+    <div class="overlay-text">
+        <h3>OUR STORY</h3>
+        <h1>We Cultivate</h1>
+        <h1> <span class="under">Excellence</span></h1>
+    </div>
+</div>
+
+
+<div class="cont">
+    <div class="imagess">
+        <img src="img/ourstory1.webp" alt="Sesame Factory" class="image1">
+        <img src="img/ourstory2.webp" alt="Sesame in Hand" class="image2">
+    </div>
+    <div class="contentss">
+        <h2 class="titless">Our <span class="underliness">Journey</span></h2>
+        <p>Abdallah Wasef started small, in 1997, he started trading high-quality Ethiopian sesame seeds, and eventually founded Abdallah Wasef and Sons with his sons, focusing on quality.</p>
+        <p>He later partnered with his cousins to open Har Bracha Tahini, using traditional methods to produce smooth, flavorful tahini.</p>
+        <p>Har Bracha Tahini quickly gained international recognition for its premium products and now exports globally, staying true to the family’s vision.</p>
+        <button class="history-btn">Our History →</button>
+    </div>
+</div>
+
+<div class="container-menu">
+    <section class="core-values">
+        <h2>Our Core Values</h2>
+        <h1>The Har Bracha Tahini <span class="highlight">Pillars</span></h1>
+        <p>Our values are rooted in authenticity, quality, and tradition. We craft tahini with pure ingredients, honoring time-honored methods, and respecting our heritage and customers.</p>
+    </section>
+
+    <div class="products">
+        <div class="product" id="tahini">
+            <img src="img/ourTahini.webp" alt="Tahini Products">
+            <div class="lable">
+                <h3>Tahini</h3>
+                <button class="product-button">+</button>
+            </div>
+        </div>
+        <div class="product" id="halva">
+            <img src="img/ourHalva.png" alt="Halva Products">
+            <div class="lable">
+                <h3>Halva</h3>
+                <button class="product-button" >+</button>
+            </div>
+        </div>
+        <div class="product" id="flavoured-tahini">
+            <img src="img/Coming_Soon.png" alt="Flavoured Tahini">
+            <div class="lable">
+                <h3>Flavoured Tahini</h3>
+
+                <a href="#" class="product-button">
+                    <span class="arrow">+</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal-tahini">
+        <h2>Tahini</h2>
+        <p><strong>Purity:</strong> We prioritize natural ingredients, using only the finest sesame seeds to create a tahini that’s pure, flavorful, and rich in nutrients.</p>
+        <p><strong>Tradition:</strong> Our tahini is crafted with time-honored techniques, preserving the authentic stone-grinding process that brings out the depth of flavor.</p>
+        <p><strong>Quality:</strong> Each jar of tahini reflects our commitment to excellence, with rigorous standards at every step to ensure smoothness, consistency, and taste.</p>
+        <p><strong>Health:</strong> We believe in producing a tahini that not only tastes good but also supports a healthy lifestyle, perfect for those who value nutrition.</p>
+    </div>
+    <div class="modal" id="modal-halva">
+        <h2>Halva</h2>
+        <p><strong>Craftsmanship:</strong> Our halva is handmade with care, blending quality ingredients to achieve the perfect texture and flavor.</p>
+        <p><strong>Authenticity:</strong> We embrace the rich tradition of halva making, honoring recipes and methods that have stood the test of time.</p>
+        <p><strong>Indulgence:</strong> Halva is about enjoyment, and we create flavors that bring a sense of sweetness and delight to every bite, using natural ingredients.</p>
+        <p><strong>Wellness:</strong> While indulgent, our halva is also a balanced treat, rich in nutrients like calcium and iron, making it a mindful choice for health-conscious individuals.</p>
+    </div>
+
+    <div class="modal" id="modal-flavoured-tahini">
+        <h2>Flavoured Tahini</h2>
+        <p>Upcoming, a fresh innovation set to astonish globally.</p>
+    </div>
+</div>
+
+<div class="quote-container">
+    <div class="pin"><h1></h1></div>
+    <blockquote class="quote-text">
+        I knew it wasn’t easy back then, but stayed committed, worked hard, and kept pushing forward, determined to turn that small beginning into something bigger. Every challenge was just a step on the way to success, and I was willing to do whatever it took to build something my family could be proud of.
+    </blockquote>
+    <cite class="quote-author">
+        — Abdallah Wasef - Founder Of AWS, & Har Bracha Tahini
+    </cite>
+</div>
+
+<div class="info-container">
+    <div class="info-box">
+        <i class="fas fa-headset icon"></i>
+        <h3>Customer service</h3>
+        <p>It’s not actually free we just price it into the products.</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-truck icon"></i>
+        <h3>Fast Free Shipping</h3>
+        <p>Yes, We do offer Free shipping!</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-lock icon"></i>
+        <h3>Secure payment</h3>
+        <p>Your payment information is processed securely</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left Section: Information & Contact -->
+        <div class="footer-info">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Refund Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+            <div class="footer-contact">
+                <p><a href="tel:+972585218207">+ (972) 585218207</a></p>
+                <p><a href="mailto:jad@harbracha.com">jad@harbracha.com</a></p>
+            </div>
+        </div>
+
+        <!-- Right Section: Newsletter & Social Media -->
+        <div class="footer-newsletter">
+            <h3>Stay in the loop with our weekly newsletter</h3>
+            <form action="#">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">➜</button>
+            </form>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
