@@ -10,9 +10,11 @@ function closeCart() {
     document.getElementById("overlay").style.display = "none";
     // document.querySelector("nav.navbar").style.display="flex";
 }
-/*function toggleMenu() {
+function toggleMenu() {
     document.querySelector(".nav-menu").classList.toggle("active");
-}*/
+
+
+}
 
 
 function openModal(id) {

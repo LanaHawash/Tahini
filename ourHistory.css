@@ -278,7 +278,7 @@ header .navbar {
 /* Show menu toggle button on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: flex;
     }
     .head .cart-icon{
         margin-right: 10px;

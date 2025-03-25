@@ -259,7 +259,7 @@ header .navbar {
     gap: 8px;
     font-size: 16px;
 }
-/------------------------------/
+
 
 .menu-toggle {
     display: none;
@@ -274,10 +274,11 @@ header .navbar {
 
 
 
+
 /* Show menu toggle button on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: flex;
     }
     .head .cart-icon{
         margin-right: 10px;
