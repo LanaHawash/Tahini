@@ -218,7 +218,7 @@ header .navbar {
     justify-content: space-between;
     width: 90%;
     margin:0 auto;
-
+    position: relative;
 
 
 }
@@ -231,6 +231,7 @@ header .navbar {
 .navbar .nav-menu {
     display: flex;
     gap: 30px;
+    position: relative;
 }
 .navbar .nav-menu .nav-link{
     padding: 10px 20px;
@@ -244,6 +245,140 @@ header .navbar {
     background: black;
 }
 
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    color: black;
+    font-size: 25px;
+    border-radius: 30px;
+    transition: 0.8s ease;
+}
+
+.nav-link:hover {
+    color: white;
+    background: black;
+}
+
+
+.submenu {
+    position: absolute;
+    max-width:1000px;
+    top: 170%;
+    height: 1240%;
+    left: 0;
+    background-color: white;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin: 0 auto;
+}
+
+.media-card {
+    flex: 1;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(80px);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.media-card img {
+    width: 200%;
+    aspect-ratio: 4/3.6;
+    object-fit: contain;
+    height: auto;
+    border-radius: 8px;
+    transition: width 0.8s ease-in-out;
+}
+ .explore-menu {
+    position: absolute;
+    max-width:300px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    min-width: 180px;
+    text-align: left;
+     gap: 50px;
+     margin: 15px;
+}
+.pe a{
+    color: #000000;
+}
+.pe{
+    font-family: sans-serif;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: left;
+    gap: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in;
+}
+
+.explore-menu .pe:hover{
+    border-bottom: 1px solid #000000;
+}
+.media-card p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 10px;
+    margin: 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.media-card p:hover{
+    border-bottom: 1px solid #ffffff;
+}
+
+.media-card img:hover{
+   width: 250%;
+}
+.arrow{
+    transition: all 0.3s ease;
+}
+
+.media-card p .arrow:hover{
+    transform: rotate(90deg);
+}
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+.dropdown:hover .explore-menu {
+    display: block;
+}
+
+
+
 .sign-in i  {
     color:black;
     font-size: 30px;
@@ -255,7 +390,6 @@ header .navbar {
     gap: 8px;
     font-size: 16px;
 }
-/*------------------------------*/
 
 .menu-toggle {
     display: none;
@@ -452,3 +586,4 @@ header .navbar {
         margin-top: 1rem;
     }
 }
+

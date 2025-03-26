@@ -33,3 +33,15 @@ window.onclick = function(event) {
 
     }
 }
+
+document.getElementById('catalog-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    let submenu = document.getElementById('submenu');
+    submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+document.getElementById('explore-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    let submenu = document.getElementById('explore-submenu');
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+});
