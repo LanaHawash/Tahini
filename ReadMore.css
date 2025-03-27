@@ -1,0 +1,175 @@
+
+
+/*
+.navbar ul li{
+    display: inline-block;
+}
+
+.navbar ul li a {
+    font-size: 25px;
+    text-decoration: none;
+    padding: 10px 20px; }
+
+.navbar ul li a:hover{
+    background-color: #232121;
+    color:white;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+}*/
+/*
+
+.navbar .logo img{
+    width: 150%;
+*/
+
+.history-section {
+    position: relative;
+    background: url('img/readmore_4.svg') no-repeat center center/cover ;
+    filter: brightness(60%);
+    /*background-position-y: -100px;*/
+    object-fit: cover;
+    height: 700px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.history-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+    padding: 40px;
+    /*max-width: 500px;*/
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.history-content{
+
+    position: absolute;
+    bottom: 100px;
+}
+.history-section h3 {
+    margin-left: 50px;
+    color: var(--color-highlight); /* Match the small text color */
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 30;
+    margin-bottom: 15px;
+
+}
+
+.history-section h2 {
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.history-section p {
+    margin-left: 50px;
+    width: 45%;
+    flex-direction: column;
+    line-height: 1.5;
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    .history-section {
+        height: 600px;
+    }
+    .history-overlay{
+        height: 600px;
+        padding:0;
+    }
+
+    .history-section h3{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .history-section h2 {
+        font-size: 20px;
+        margin-left: 10px;
+
+    }
+    .history-section p {
+        width: 100%;
+        font-size:16px ;
+        margin-left: 10px;
+
+    }
+}
+
+/* About Section */
+.about-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+.about-section h1 {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+
+/* Headings */
+.about-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-section span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Paragraph Styles */
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+.info-box {
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 30%;
+    text-align: center;
+}
+.info-box::before{
+
+}
+.info-box h3 {
+    text-align: center;
+}
+
+.info-box p {
+    margin: 10px 0 0;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="backUp.css">
+    <link rel="stylesheet" href="ReadMore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+<div class="head">
+    <div class="container">
+        <div class="icons1">
+            <ul>
+                <li> <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"> </i></a></li>
+                <li> <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
+            </ul>
+        </div>
+        <div class= "cart-icon" onclick="openCart()">
+            <a><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="navbar">
+
+        <a href="index.html" class="logo-img"> <img src="img/icon.png" alt="logo"/></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="dropdown">
+                <a href="#" id="catalog-btn" class="nav-link">Catalog</a>
+                <div class="submenu" id="submenu">
+                    <div class="media-card">
+                        <img src="img/sub1.png" alt="Tahini 1kg">
+                        <p>Tahini 1kg <span class="arrow">→</span></p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub2.png" alt="Tahini 0.5kg">
+                        <p>Tahini 0.5kg <span class="arrow">→</span></p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub3.png" alt="Tahini Whole Sesame">
+                        <p>Tahini Whole Sesame <span class="arrow">→</span> </p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub4.png" alt="Halva">
+                        <p>Halva <span class="arrow">→</span></p>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="explore.html" class="nav-link">Explore</a>
+                <ul class="explore-menu" id="explore-submenu">
+                    <li class="pe"><a href="#">Our Story</a></li>
+                    <li class="pe"><a href="#">FAQ'S</a></li>
+                    <li class="pe"><a href="#">Contact Us</a></li>
+
+                </ul>
+            </li>
+            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
+        </ul>
+
+
+
+        <div class="sign-in">
+
+            <a href="#"> <i class="fa-regular fa-user"></i></a>
+            <span>Sign In</span>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Cart</h2>
+            <button class="close-btn" onclick="closeCart()">✖</button>
+        </div>
+        <div class="cart-content">
+            <h3>Your cart is currently empty.</h3>
+            <p>Not sure where to start? Try these collections:</p>
+            <button class="continue-btn">Continue Shopping ➜</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+    <script src="script.js"></script>
+
+
+</header>
+
+<section class="history-section">
+</section>
+
+
+<section class="about-section">
+    <h1>Sesame Seeds</h1>
+
+</section>
+
+<section class="about-section">
+    <h2>All About Sesame Seeds</h2>
+    <p>
+        Sesame seeds are one of the world’s oldest cultivated crops, celebrated for their rich flavor, versatility, and impressive health benefits. These tiny seeds have been a staple in diets and traditions for thousands of years, playing a vital role in cuisines across the globe.
+    </p>
+
+</section>
+
+<section class="about-section">
+    <h2>The Origin of Our Sesame Seeds</h2>
+    <p>
+        We source our sesame seeds from Ethiopia, a region renowned for producing some of the highest-quality sesame seeds in the world. The fertile soils and ideal climate conditions of Ethiopia contribute to the exceptional taste, texture, and nutritional value of the sesame seeds. Ethiopian sesame seeds are prized for their uniformity, purity, and rich oil content, making them a top choice for premium products like tahini, halva, and more.
+    </p>
+
+</section>
+
+<section class="about-section">
+    <h2>The Journey from Farm to Table</h2>
+    <p>
+        Our sesame seeds are carefully harvested by skilled farmers who have passed down their expertise through generations. After harvest, the seeds are meticulously cleaned, sorted, and inspected to ensure only the best quality seeds are selected. Once they meet rigorous standards, the seeds are shipped to our facilities, where they are transformed into delicious products.
+    </p>
+</section>
+
+
+<section class="about-section">
+    <h2>Nutritional Benefits</h2>
+    <p>
+        Sesame seeds are a powerhouse of nutrition packed into a tiny package. They are rich in:
+    </p>
+    <p>
+        <span>Healthy Fats:</span> Containing heart-friendly unsaturated fats and omega-6 fatty acids.
+    </p>
+
+    <p>
+        <span>Plant-Based Protein:</span> A valuable protein source, especially for vegetarian and vegan diets.
+    </p>
+
+
+
+    <p>
+        <span>Vitamins and Minerals:</span> High in calcium, magnesium, phosphorus, and iron, supporting bone health and overall vitality.
+    </p>
+
+    <p>
+        <span>Antioxidants:</span> Packed with sesamin and sesamol, compounds known for their antioxidant properties.
+    </p>
+
+
+
+
+</section>
+
+
+<section class="about-section">
+    <h2>Culinary Uses</h2>
+    <p>
+        Sesame seeds are incredibly versatile and enhance countless dishes with their nutty flavor and crunchy texture. They can be:
+    </p>
+    <p>
+      Toasted and sprinkled on salads, stir-fries, or baked goods.
+</p>
+    <p>
+        Ground into tahini, a creamy paste used in hummus, dressings, and desserts.
+    </p>
+    <p>
+        Incorporated into traditional recipes like halva, sauces, and marinades.
+    </p>
+</section>
+
+<section class="about-section">
+    <h2>Commitment to Quality</h2>
+    <p>
+        By partnering with trusted suppliers in Ethiopia, we ensure that every sesame seed we use meets strict quality standards. Our goal is to bring you the best sesame products that honor the rich tradition and premium quality of these remarkable seeds.   </p>
+
+</section>
+
+
+
+
+<section class="about-section">
+    <h2>Sustainability and Community Impact</h2>
+    <p>
+        We are proud to work with suppliers who prioritize sustainable farming practices and support the local farming communities in Ethiopia. By sourcing our sesame seeds responsibly, we contribute to the preservation of this ancient crop and the livelihoods of the people who cultivate it.    </p>
+
+</section>
+
+
+
+<section class="about-section">
+    <h2>Why Choose Our Sesame Seeds?</h2>
+    <p>
+        Every sesame seed we use represents a commitment to quality, sustainability, and tradition. Whether in our tahini, halva, or other sesame-based products, you’ll taste the difference that comes from using the finest sesame seeds in the world.
+    </p>
+
+    <p>
+        Discover the magic of sesame seeds and how they elevate every dish they touch.<span> [Learn more about our sesame journey.] </span>   </p>
+
+    <p>
+        Every sesame seed we use represents a commitment to quality, sustainability, and tradition. Whether in our tahini, halva, or other sesame-based products, you’ll taste the difference that comes from using the finest sesame seeds in the world.
+    </p>
+
+</section>
+
+
+
+
+
+
+
+<div class="info-container">
+    <div class="info-box">
+        <i class="fas fa-headset icon"></i>
+        <h3>Customer service</h3>
+        <p>It’s not actually free we just price it into the products.</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-truck icon"></i>
+        <h3>Fast Free Shipping</h3>
+        <p>Yes, We do offer Free shipping!</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-lock icon"></i>
+        <h3>Secure payment</h3>
+        <p>Your payment information is processed securely</p>
+    </div>
+</div>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left Section: Information & Contact -->
+        <div class="footer-info">
+            <h3>Information</h3>
+            <ul>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Refund Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+            <div class="footer-contact">
+                <p><a href="tel:+972585218207">+ (972) 585218207</a></p>
+                <p><a href="mailto:jad@harbracha.com">jad@harbracha.com</a></p>
+            </div>
+        </div>
+
+        <!-- Right Section: Newsletter & Social Media -->
+        <div class="footer-newsletter">
+            <h3>Stay in the loop with our weekly newsletter</h3>
+            <form action="#">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">➜</button>
+            </form>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
