@@ -47,20 +47,5 @@ document.getElementById('explore-btn').addEventListener('click', function(event)
 });
 
 
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('span .plus');
 
-        if (answer.style.display === "block") {
-            answer.style.display = "none";
-            icon.textContent = "+";
-        } else {
-            document.querySelectorAll('.faq-answer').forEach(a => a.style.display = "none");
-            document.querySelectorAll('.faq-item span .plus').forEach(i => i.textContent = "+");
 
-            answer.style.display = "block";
-            icon.textContent = "-";
-        }
-    });
-});

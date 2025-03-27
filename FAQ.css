@@ -20,6 +20,7 @@
     width:90%;
     margin:auto;
 
+
 }
 .head{
     background-color: var(--color-black);
@@ -497,25 +498,44 @@ header .navbar {
 
 
 }
+.faq-container2{
+    display: flex;
+}
 .faq-section {
     width: 60%;
     background: #fff;
     border-radius: 10px;
-    padding: 20px;
+
+
+}
+
+.faq-section1{
+    margin-bottom: 30px;
+    padding: 30px;
+    border: solid #666;
+    border-radius: 10px;
+}
+.faq-section2{
+    margin-bottom: 30px;
+    padding: 30px;
+    border: solid #666;
+    border-radius: 10px;
 }
 
 .faq-title {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
 }
 
 .faq-description {
     color: #666;
+    margin-bottom: 20px;
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     padding: 15px 0;
+
    /* cursor: pointer;*/
 }
 
@@ -525,13 +545,18 @@ header .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .faq-answer {
-    display: none;
+    display:none;
     font-size: 16px;
     color: #444;
     padding-top: 10px;
+}
+ .faq-payment ul li{
+     padding-top: 15px;
+
 }
 .plus{
     cursor: pointer;
@@ -549,13 +574,32 @@ header .navbar {
 }
 
 .contact-form {
-    width: 30%;
+    width: 35%;
+    height: 28rem;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
+    position: sticky;
+    top: 10rem;
+    margin-bottom: 2rem;
+
 
 }
+.contact-inputs{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.contact-inputs input{
+    height: 3rem;
+    border-radius: 50%;
+}
 
+.contact-inputs textarea{
+    height: 5rem;
+    border-radius:40px;
+}
 .contact-form h3 {
     font-size: 22px;
     margin-bottom: 10px;
@@ -567,17 +611,23 @@ header .navbar {
     margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: "Times New Roman";
+    font-size: 14px;
 }
 
 .contact-form button {
-    width: 100%;
-    padding: 10px;
+    width:40%;
     background: black;
     color: white;
-    font-size: 16px;
+    padding: 15px 20px;
     border: none;
+    border-radius: 25px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.contact-form button:hover{
+    background: #444;
 }
 
 @media (max-width: 768px) {
@@ -588,6 +638,36 @@ header .navbar {
         width: 100%;
     }
 }
+
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+.info-box {
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 30%;
+    text-align: center;
+}
+.info-box::before{
+
+}
+.info-box h3 {
+    text-align: center;
+}
+
+.info-box p {
+    margin: 10px 0 0;
+}
+
+
+
 /* Footer Styling */
 .footer {
     background: #181818;
