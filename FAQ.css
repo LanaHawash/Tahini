@@ -459,12 +459,12 @@ header .navbar {
     margin-left:5% ;
     margin-bottom:40px ;
 }
-.faq-container h1 {
+.faq-container1 h1 {
     font-size: 80px;
     font-weight: bold;
 
 }
-.faq-container p {
+.faq-container1 p {
     font-size: 20px;
     color: #444;
 
@@ -516,7 +516,7 @@ header .navbar {
 .faq-item {
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
-    cursor: pointer;
+   /* cursor: pointer;*/
 }
 
 .faq-question {
@@ -532,6 +532,20 @@ header .navbar {
     font-size: 16px;
     color: #444;
     padding-top: 10px;
+}
+.plus{
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+/*.plus:hover {
+
+    rotate: 45deg;
+
+
+
+}*/
+.plus:hover {
+    transform: rotate(90deg);
 }
 
 .contact-form {
