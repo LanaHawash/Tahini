@@ -25,7 +25,7 @@
 
 .history-section {
     position: relative;
-    background: url('img/readmore_4.svg') no-repeat center center/cover ;
+    background: url('../img/readmore_4.svg') no-repeat center center/cover ;
     filter: brightness(60%);
     /*background-position-y: -100px;*/
     object-fit: cover;

@@ -319,7 +319,7 @@ header .navbar {
 
 .history-section {
     position: relative;
-    background: url('img/ourHistory.png') no-repeat center center/cover ;
+    background: url('../img/ourHistory.png') no-repeat center center/cover ;
 
     /*background-position-y: -100px;*/
     height: 700px; /* Adjust height as needed */

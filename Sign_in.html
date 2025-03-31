@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Backup</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cs/backUp.css">
-    <link rel="stylesheet" href="cs/ReadMore.css">
+    <link rel="stylesheet" href="cs/signIn.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 </head>
 <body>
+
 <div class="head">
     <div class="container">
         <div class="icons1">
@@ -68,7 +68,6 @@
         </ul>
 
 
-
         <div class="sign-in">
 
             <a href="#"> <i class="fa-regular fa-user"></i></a>
@@ -94,149 +93,132 @@
 
     <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 
 
 </header>
 
-<section class="history-section">
-</section>
+<main>
 
 
-<section class="about-section">
-    <h1>Sesame Seeds</h1>
+    <div class="box">
+        <div class="inner-box">
+            <div class="forms-wrap">
+                <form action="signIn.php" autocomplete="off" class="sign-in-form" method="post">
+                    <div class="logo">
 
-</section>
+                        <h4>Har Bracha <span>Tahini</span></h4>
+                    </div>
+                    <div class="heading">
+                        <h2> Welcome Back</h2>
+                        <h6>Not registred yet?</h6>
+                        <a href="#" class="toggle"> Sign up </a>
+                    </div>
+                    <div class="actual-form">
+                        <div class="input-wrap">
+                            <input type="email" name="email" minlength="4"  class="input-field" autocomplete="off"  required />
+                            <label >Email</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="password" name="password" minlength="4"  class="input-field" autocomplete="off"  required />
+                            <label >Password</label>
+                        </div>
+                        <input type="submit" value="Sign In" class="sign-btn" />
+                        <p class="text">
+                            Forgotten your password or your login datails?
+                            <a href="#">Get help </a> signing in
+                        </p>
+                    </div>
+                </form>
+                <form action="signUp.php" method="post" autocomplete="off" class="sign-up-form">
+                    <div class="logo">
 
-<section class="about-section">
-    <h2>All About Sesame Seeds</h2>
-    <p>
-        Sesame seeds are one of the world’s oldest cultivated crops, celebrated for their rich flavor, versatility, and impressive health benefits. These tiny seeds have been a staple in diets and traditions for thousands of years, playing a vital role in cuisines across the globe.
-    </p>
+                        <h4>Har Bracha <span>Tahini</span></h4>
+                    </div>
+                    <div class="heading">
+                        <h2> Get Started</h2>
+                        <h6>Already have an account?</h6>
+                        <a href="#" class="toggle"> Sign in </a>
+                    </div>
+                    <div class="actual-form">
+                        <div class="input-wrap">
+                            <input type="text" name="name" minlength="4"  class="input-field" autocomplete="off"  required />
+                            <label >Name</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="email" name="email"  class="input-field" autocomplete="off"  required />
+                            <label >Email</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input type="password" name="password" minlength="4"  class="input-field" autocomplete="off"  required />
+                            <label >Password</label>
+                        </div>
+                        <input type="submit" value="Sign Up" class="sign-btn" />
+                        <p class="text">
+                            By signing up, I agree to the <a href="#">Terms of Services
+                        </a> and <a href="#">Privacy Policy</a>
+                        </p>
+                    </div>
+                </form>
 
-</section>
+            </div>
+            <div class="carousel">
+                <div class="images-wrapper">
+                    <img src="img/adsign.png" class="image img-1 show" alt=""/>
+                    <img src="img/8jpg.png" class="image img-2" alt=""/>
+                    <img src="img/sub4.png" class="image img-3" alt=""/>
 
-<section class="about-section">
-    <h2>The Origin of Our Sesame Seeds</h2>
-    <p>
-        We source our sesame seeds from Ethiopia, a region renowned for producing some of the highest-quality sesame seeds in the world. The fertile soils and ideal climate conditions of Ethiopia contribute to the exceptional taste, texture, and nutritional value of the sesame seeds. Ethiopian sesame seeds are prized for their uniformity, purity, and rich oil content, making them a top choice for premium products like tahini, halva, and more.
-    </p>
+                </div>
 
-</section>
-
-<section class="about-section">
-    <h2>The Journey from Farm to Table</h2>
-    <p>
-        Our sesame seeds are carefully harvested by skilled farmers who have passed down their expertise through generations. After harvest, the seeds are meticulously cleaned, sorted, and inspected to ensure only the best quality seeds are selected. Once they meet rigorous standards, the seeds are shipped to our facilities, where they are transformed into delicious products.
-    </p>
-</section>
-
-
-<section class="about-section">
-    <h2>Nutritional Benefits</h2>
-    <p>
-        Sesame seeds are a powerhouse of nutrition packed into a tiny package. They are rich in:
-    </p>
-    <p>
-        <span>Healthy Fats:</span> Containing heart-friendly unsaturated fats and omega-6 fatty acids.
-    </p>
-
-    <p>
-        <span>Plant-Based Protein:</span> A valuable protein source, especially for vegetarian and vegan diets.
-    </p>
-
-
-
-    <p>
-        <span>Vitamins and Minerals:</span> High in calcium, magnesium, phosphorus, and iron, supporting bone health and overall vitality.
-    </p>
-
-    <p>
-        <span>Antioxidants:</span> Packed with sesamin and sesamol, compounds known for their antioxidant properties.
-    </p>
-
-
-
-
-</section>
-
-
-<section class="about-section">
-    <h2>Culinary Uses</h2>
-    <p>
-        Sesame seeds are incredibly versatile and enhance countless dishes with their nutty flavor and crunchy texture. They can be:
-    </p>
-    <p>
-      Toasted and sprinkled on salads, stir-fries, or baked goods.
-</p>
-    <p>
-        Ground into tahini, a creamy paste used in hummus, dressings, and desserts.
-    </p>
-    <p>
-        Incorporated into traditional recipes like halva, sauces, and marinades.
-    </p>
-</section>
-
-<section class="about-section">
-    <h2>Commitment to Quality</h2>
-    <p>
-        By partnering with trusted suppliers in Ethiopia, we ensure that every sesame seed we use meets strict quality standards. Our goal is to bring you the best sesame products that honor the rich tradition and premium quality of these remarkable seeds.   </p>
-
-</section>
-
-
-
-
-<section class="about-section">
-    <h2>Sustainability and Community Impact</h2>
-    <p>
-        We are proud to work with suppliers who prioritize sustainable farming practices and support the local farming communities in Ethiopia. By sourcing our sesame seeds responsibly, we contribute to the preservation of this ancient crop and the livelihoods of the people who cultivate it.    </p>
-
-</section>
-
-
-
-<section class="about-section">
-    <h2>Why Choose Our Sesame Seeds?</h2>
-    <p>
-        Every sesame seed we use represents a commitment to quality, sustainability, and tradition. Whether in our tahini, halva, or other sesame-based products, you’ll taste the difference that comes from using the finest sesame seeds in the world.
-    </p>
-
-    <p>
-        Discover the magic of sesame seeds and how they elevate every dish they touch.<span> [Learn more about our sesame journey.] </span>   </p>
-
-    <p>
-        Every sesame seed we use represents a commitment to quality, sustainability, and tradition. Whether in our tahini, halva, or other sesame-based products, you’ll taste the difference that comes from using the finest sesame seeds in the world.
-    </p>
-
-</section>
-
-
-
-
-
-
-
-<div class="info-container">
-    <div class="info-box">
-        <i class="fas fa-headset icon"></i>
-        <h3>Customer service</h3>
-        <p>It’s not actually free we just price it into the products.</p>
+                <div class="text-slider">
+                    <div class ="text-wrap">
+                        <div class ="text-group">
+                            <h2>High-Quality Tahini</h2>
+                            <h2>Most Delicious Tastes</h2>
+                            <h2>Halva With A Rich And Indulgent Test</h2>
+                        </div>
+                    </div>
+                    <div class ="bullets">
+                        <span class="active" data-value="1"></span>
+                        <span data-value="2"></span>
+                        <span data-value="3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="info-box">
-        <i class="fas fa-truck icon"></i>
-        <h3>Fast Free Shipping</h3>
-        <p>Yes, We do offer Free shipping!</p>
-    </div>
-    <div class="info-box">
-        <i class="fas fa-lock icon"></i>
-        <h3>Secure payment</h3>
-        <p>Your payment information is processed securely</p>
-    </div>
-</div>
+
+</main>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Left Section: Information & Contact -->
 <footer class="footer">
     <div class="footer-container">
         <!-- Left Section: Information & Contact -->
@@ -273,6 +255,7 @@
 </footer>
 
 
+<script src="scripts/sign.js"></script>
 
 </body>
 </html>
