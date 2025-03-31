@@ -274,7 +274,7 @@ header .navbar {
     max-width:1000px;
     top: 170%;
     height: 1240%;
-    left: 0;
+    left: -170px;
     background-color: white;
     flex-wrap: nowrap;
     gap: 20px;
@@ -312,7 +312,7 @@ header .navbar {
     position: absolute;
     max-width:300px;
     top: 100%;
-    left: 50%;
+    left: 60%;
     transform: translateX(-50%);
     background-color: white;
     padding: 20px;
