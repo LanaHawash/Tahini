@@ -1,0 +1,230 @@
+:root {
+    --color-main: #ffccdf;
+    --bg-body: #f8f8fb;
+    --main-accent: #131313;
+    --main-text: #555555;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+body {
+
+    color: var(--main-text);
+    background: var(--bg-body);
+    margin: 0;
+}
+.page-wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: linear-gradient(480deg, #f6f1f1, #070707);
+
+    color: #1d1d1d;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    box-shadow: var(--shadow);
+}
+
+.brand h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+.profile-card {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.profile-img i {
+    font-size: 7.5rem;
+    color: #070707;
+    width: 170px;
+    height: 190px;
+    object-fit: cover;
+}
+
+.profile-info h2 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.sidebar-menu {
+    margin-top: 30px;
+}
+.menu-item span{
+    font-size: 1.3rem;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+.menu-item a:hover, .menu-item a.activeM {
+    background-color: var(--main-accent);
+}
+
+.menu-item a i {
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+.logout-btn {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 10px 20px;
+    color: var(--white);
+    background-color: var(--main-accent);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #f8f7f5;
+    color: #070707;
+}
+
+
+.Photo{
+    margin-left: 270px;
+    width: calc(100% - 270px);
+}
+.dd{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        margin: 0;
+    }
+
+
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة جداً (مثل الهواتف الذكية) */
+
+
+@media (max-width: 768px) {
+    .sidebar{
+        width: 95%;
+        align-items: center;
+        /*border-radius: 20px;*/
+    }
+    .sidebar-menu .menu-item a {
+        font-size: 0.9rem;
+        gap: 10px;
+        width: 93%;
+    }
+    .main-content{
+        width: 80%;
+        margin: 1px;
+    }
+    header{
+
+        width: 100%;
+        height: 30px;
+        margin-left: 1px;
+        margin-bottom: 10px;
+        /*padding-left: 0;*/
+
+    }
+    header h2{
+        font-size: 1.2rem;
+    }
+    .filter-bar label{
+        /*margin-left: 10px;*/
+        font-size: 1rem;
+    }
+    .filter-bar select{
+        width: 90px
+    }
+    .filter-bar .btn-submit1{
+        font-size: 1rem;
+        padding:2px ;
+    }
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+        /*width: 1000px;*/
+        /*gap: 10px;*/
+        /*margin-left: 200px;*/
+
+        /*width: 100px;*/
+        /*width: 900px;*/
+        /*justify-content: center;*/
+        align-items: center;
+        display: flex;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar-menu .menu-item a span {
+        display: none;
+    }
+
+    .stat-card {
+        padding: 10px;
+    }
+
+    .logout-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+}
+
+/***********************************************************************************************************/
