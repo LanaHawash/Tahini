@@ -482,7 +482,19 @@ width: 150%;
         transform: scaleX(1); /* Stretching */
     }
 }
+.product-head
+{
+    display: flex;
+    justify-content: space-between;
 
+}
+.product-h1{
+    align-items: center;
+    align-content: center;
+}
+.leftRightBTNs{
+    gap: 0;
+}
 .product-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -510,6 +522,7 @@ h1 {
     gap: 10px;
     position: relative;
     overflow: hidden;
+
 }
 
 .product-list {
@@ -517,7 +530,8 @@ h1 {
     gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    max-width: 900px;
+    max-width: 100%;
+    scrollbar-width: none;
 }
 
 
@@ -544,7 +558,7 @@ h1 {
     color: black;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    margin: 0 50px;
+    margin: 0 5px;
 }
 .slider-btn:hover{
     color: white;
