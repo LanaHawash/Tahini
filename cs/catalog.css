@@ -454,13 +454,21 @@ header .navbar {
     background-color: #f8f8f8;
 }
 */
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
 .product-card {
-    width: 250px;
+    width: 23%;
     text-align: center;
-    background: white;
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+
+    margin: 9px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
     transition: transform 0.3s ease;
     cursor: pointer;
     position: relative;
@@ -473,6 +481,7 @@ header .navbar {
 
 .product-title {
     margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -480,11 +489,19 @@ header .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: text-decoration 0.3s ease;
+    transition: text-decoration 1s ease;
 }
 .product-title span{
     position: absolute;
-    right: 10px;
+    right: 20px;
+    transition: transform 0.6s ease-in-out;
+}
+.product-card:hover .product-title {
+    text-decoration: underline;
+}
+.product-card:hover .product-title span{
+
+    transform: rotate(90deg);
 }
 /*
 .product-title span {
