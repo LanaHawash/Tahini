@@ -46,6 +46,3 @@ document.getElementById('explore-btn').addEventListener('click', function(event)
     submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
 });
 
-
-
-
