@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cs/main.css">
+    <link rel="stylesheet" href="cs/backUp.css">
     <title>HarBracha Tahini</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -27,8 +28,8 @@
 </div>
 <header>
 <div class="navbar">
+<!--    hadhadajdhaj-->
 
-<!-- -->
        <a href="index.html" class="logo-img"> <img src="img/icon.png" alt="logo"/></a>
     <div class="menu-toggle" onclick="toggleMenu()">
         <i class="fa-solid fa-bars"></i>
@@ -36,9 +37,35 @@
 
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="catalog.html" class="nav-link">Catalog</a></li>
-            <li class="nav-item"><a href="explore.html" class="nav-link">Explore</a> </li>
-            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" id="catalog-btn" class="nav-link">Catalog</a>
+                <div class="submenu" id="submenu">
+                    <div class="media-card">
+                        <img src="img/sub1.png" alt="Tahini 1kg">
+                        <p>Tahini 1kg <span class="arrow">→</span></p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub2.png" alt="Tahini 0.5kg">
+                        <p>Tahini 0.5kg <span class="arrow">→</span></p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub3.png" alt="Tahini Whole Sesame">
+                        <p>Tahini Whole Sesame <span class="arrow">→</span> </p>
+                    </div>
+                    <div class="media-card">
+                        <img src="img/sub4.png" alt="Halva">
+                        <p>Halva <span class="arrow">→</span></p>
+                    </div>
+                </div>
+            </li>            <li class="dropdown">
+                <a href="explore.html" class="nav-link">Explore</a>
+                <ul class="explore-menu" id="explore-submenu">
+                    <li class="pe"><a href="#">Our Story</a></li>
+                    <li class="pe"><a href="#">FAQ'S</a></li>
+                    <li class="pe"><a href="#">Contact Us</a></li>
+
+                </ul>
+            </li>            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
         </ul>
 
 
