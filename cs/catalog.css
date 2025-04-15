@@ -459,7 +459,9 @@ header .navbar {
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 95%;
+    margin: auto;
 }
 .product-card {
     width: 23%;
@@ -496,8 +498,14 @@ header .navbar {
     right: 20px;
     transition: transform 0.6s ease-in-out;
 }
+.product-title {
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 1.4s ease;
+}
+
 .product-card:hover .product-title {
-    text-decoration: underline;
+    border-bottom: 2px solid currentColor;
 }
 .product-card:hover .product-title span{
 
