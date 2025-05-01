@@ -35,7 +35,7 @@ window.onclick = function(event) {
 }
 
 document.getElementById('catalog-btn').addEventListener('click', function(event) {
-    event.preventDefault();
+    //event.preventDefault();
     let submenu = document.getElementById('submenu');
     submenu.style.display = submenu.style.display === 'flex' ? 'none' : 'flex';
 });
