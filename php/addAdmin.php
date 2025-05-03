@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 // DB Config
 $host = 'localhost';

@@ -33,7 +33,7 @@ try {
             if ($user['role'] === 'admin') {
                 header("Location: ../Admin.html");
             } else {
-                header("Location: ../index.html");
+                header("Location: ../index.php");
             }
             exit;
         } else {
