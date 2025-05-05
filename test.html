@@ -1,10 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tahini Product</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           background: #fafafa;
+           margin: 0;
+           padding: 2rem;
+       }
+
+       .product-container {
+           display: flex;
+           max-width: 1000px;
+           margin: auto;
+           background: white;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+           border-radius: 80px;
+           overflow: hidden;
+           height: 600px;
+       }
+
+       .image-section img {
+           max-width: 401px;
+           width: 106%;
+           /* margin: auto; */
+           padding: 8rem;
+           height: 300px;
+           object-fit: cover;
+       }
+
+       .info-section {
+           padding: 8rem;
+           flex-grow: 1;
+       }
+
+       .info-section h1 {
+           font-size: 1.5rem;
+           margin: 0.5rem 0;
+       }
+
+       .info-section .price {
+           font-size: 1.2rem;
+           color: #444;
+       }
+
+       .info-section .stock {
+           color: green;
+           margin: 1rem 0;
+       }
+
+       .buttons {
+           margin: 1rem 0;
+       }
+
+       .add, .buy {
+           padding: 0.75rem 1.5rem;
+           border: none;
+           cursor: pointer;
+           margin-right: 1rem;
+       }
+
+       .add {
+           background: black;
+           color: white;
+       }
+
+       .buy {
+           background: white;
+           border: 2px solid black;
+       }
+
+       .share {
+           margin-top: 1rem;
+       }
+
+       .share a {
+           margin-right: 0.5rem;
+           text-decoration: none;
+           color: #0077cc;
+       }
+   </style>
 </head>
 <body>
-
+<div class="product-container">
+    <div class="image-section">
+        <img src="img/Tahini3.jpg" alt="Tahini Pack" />
+    </div>
+    <div class="info-section">
+        <h2>Tahini Har Bracha</h2>
+        <h1>Tahini 0.5KG pack of 24</h1>
+        <p class="price">369.99 NIS</p>
+        <p class="stock">In stock, ready to ship</p>
+        <div class="buttons">
+            <button class="add">Add to cart</button>
+            <button class="buy">Buy it now</button>
+        </div>
+        <div class="share">
+            <span>Share:</span>
+            <a href="#">Facebook</a>
+            <a href="#">X</a>
+            <a href="#">Pinterest</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Email</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

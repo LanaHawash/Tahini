@@ -22,14 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productName']) && $_P
     $productName = $_POST['productName'];
     $description = $_POST['productDescription'];
     $price = floatval($_POST['productPrice']);
-   // $type = $_POST['productType'];
+    $type = $_POST['productType'];
     $quantity = intval($_POST['quantity']);
     $date = date('Y-m-d');
 
     if (isset($_FILES['productImage']['tmp_name'])) {
         $image = file_get_contents($_FILES['productImage']['tmp_name']);
 
-        $query = "INSERT INTO product (Product_name, Description, Price, Date, Quantity,Image)
+        $query = "INSERT INTO products (Product_name, Description, Price, Date, Quantity,typess,Image)
                   VALUES (:productName, :description, :price, :date, :quantity, :type, :image)";
         $stmt = $conn->prepare($query);
 
@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productName']) && $_P
                 ':price' => $price,
                 ':date' => $date,
                 ':quantity' => $quantity,
+                ':type' => $type,
                 ':image' => $image
             ]);
             echo "<script>alert('Product added successfully!');</script>";
@@ -52,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productName']) && $_P
 // حذف منتج
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
     $productId = intval($_POST['product_id']);
-    $stmt = $conn->prepare("DELETE FROM product WHERE Product_id = :productId");
+    $stmt = $conn->prepare("DELETE FROM products WHERE Product_id = :productId");
 
     try {
         $stmt->execute([':productId' => $productId]);
@@ -66,17 +67,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 // تعديل منتج
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'edit') {
     $productId = intval($_POST['product_id']);
-    $productName = $_POST['product_name'];
-    $description = $_POST['description'];
-    $price = floatval($_POST['price']);
-    $quantity = intval($_POST['quantity']);
+    $productName = $_POST['Product_name'];
+    $description = $_POST['Description'];
+    $price = floatval($_POST['Price']);
+    $type = $_POST['typess'];
+    $quantity = intval($_POST['Quantity']);
 
-    $query = "UPDATE product SET 
-              product_name = :productName,
-              description = :description,
-              price = :price,
-              quantity = :quantity
-              WHERE product_id = :productId";
+    $query = "UPDATE products SET 
+              Product_name = :productName,
+              Description = :description,
+              Price = :price,
+              typess = :typess,
+              Quantity = :quantity
+              WHERE Product_id = :productId";
 
     $stmt = $conn->prepare($query);
 
@@ -86,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             ':description' => $description,
             ':price' => $price,
             ':quantity' => $quantity,
+            ':type' => $type,
             ':productId' => $productId
         ]);
         echo "Product updated successfully!";
@@ -97,8 +101,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
 // جلب المنتجات لعرضها حسب النوع
 $filterType = isset($_GET['filterType']) ? $_GET['filterType'] : 'all';
-$whereClause = $filterType !== 'all' ? "WHERE Type = :filterType" : '';
-$query = "SELECT * FROM product $whereClause";
+$whereClause = $filterType !== 'all' ? "WHERE typess = :filterType" : '';
+$query = "SELECT * FROM products $whereClause";
 
 $stmt = $conn->prepare($query);
 
@@ -119,10 +123,8 @@ try {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cs/Admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Admin Product</title>
 </head>
 <body>
@@ -155,7 +157,7 @@ try {
                 </a>
             </div>
             <div class="menu-item">
-                <a href="customer.html">
+                <a href="Customer.html">
                     <i class="fa-solid fa-user-group"></i>
                     <span>Customers</span>
                 </a>
@@ -202,9 +204,8 @@ try {
 
     <section class="add-product">
         <h3>Add Product</h3>
-        <form id="addProductForm" method="post" enctype="multipart/form-data" >
+        <form id="addProductForm" method="post" enctype="multipart/form-data">
             <input type="hidden" name="action" value="add">
-
             <div class="form-grid">
                 <div class="form-group">
                     <label for="productName">Product Name</label>
@@ -228,10 +229,8 @@ try {
                         <option value="">Select Type</option>
                         <option value="skincare">Tahini</option>
                         <option value="haircare">Halva</option>
-
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
                     <input type="number" id="quantity" name="quantity" required>
@@ -240,8 +239,6 @@ try {
                     <button type="submit" class="btn-submit">Add Product</button>
                 </div>
             </div>
-
-
         </form>
     </section>
 
@@ -263,129 +260,94 @@ try {
             </thead>
             <tbody id="productTable">
             <?php foreach ($products as $product): ?>
-            <tr>
-                <td contenteditable="true"><?= number_format($product['Product_id']) ?></td>
-                <td contenteditable="true">
-                    <?php if (!empty($product['Image'])): ?>
-                    <img src="data:image/jpeg;base64,<?= base64_encode($product['Image']) ?>" alt="Product Image">
-                    <?php else: ?>
-                    <span>No Image</span>
-                    <?php endif; ?>
-                </td>
-                <td contenteditable="true"><?= htmlspecialchars($product['Product_name']) ?></td>
-                <td contenteditable="true"><?= htmlspecialchars($product['Description']) ?></td>
-                <td contenteditable="true"><?= htmlspecialchars($product['Type']) ?></td>
-                <td contenteditable="true"><?= number_format($product['Price'], 2) ?></td>
-                <td contenteditable="true"><?= number_format($product['Quantity'], 0) ?></td>
-                <td contenteditable="true"><?= htmlspecialchars($product['Date']) ?></td>
-
-                <td>
-                    <button class='btn-action btn-edit' onclick="editProduct(this.parentElement.parentElement)">
-                        <i class='fas fa-edit'></i>
-                    </button>
-                    <button class='btn-action btn-delete' onclick="deleteProduct()">
-                        <i class='fas fa-trash'></i>
-                    </button>
-                </td>
-            </tr>
+                <tr>
+                    <td><?= htmlspecialchars($product['Product_id']) ?></td>
+                    <td>
+                        <?php if (!empty($product['Image'])): ?>
+                            <img src="data:image/jpeg;base64,<?= base64_encode($product['Image']) ?>" alt="Product Image" style="max-width: 80px;">
+                        <?php else: ?>
+                            <span>No Image</span>
+                        <?php endif; ?>
+                    </td>
+                    <td><?= htmlspecialchars($product['Product_name']) ?></td>
+                    <td><?= htmlspecialchars($product['Description']) ?></td>
+                    <td><?= htmlspecialchars($product['typess']) ?></td>
+                    <td><?= number_format($product['Price'], 2) ?></td>
+                    <td><?= intval($product['Quantity']) ?></td>
+                    <td><?= htmlspecialchars($product['Date']) ?></td>
+                    <td>
+                        <button class="btn-action btn-edit" onclick="editProduct(this.parentElement.parentElement, <?= $product['Product_id'] ?>)">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn-action btn-delete" onclick="deleteProduct(<?= $product['Product_id'] ?>)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
             <?php endforeach; ?>
             </tbody>
 
-        </table>
     </section>
 </div>
 </div>
 
+
 <script>
-    // حذف العميل
-    // حذف المنتج
-    // حذف المنتج
-    function deleteProduct(ProductId) {
+    function deleteProduct(productId) {
         if (confirm("Are you sure you want to delete this product?")) {
             const formData = new FormData();
             formData.append("action", "delete");
-            formData.append("product_id", ProductId); // التأكد من تطابق الاسم مع PHP
+            formData.append("product_id", productId);
 
             fetch("", {
                 method: "POST",
-                body: formData,
+                body: formData
             })
-                .then((response) => response.text())
-                .then((data) => {
-                    alert(data); // عرض رسالة التحقق
-                    const row = document.querySelector(`#product-${ProductId}`);
-                    row.remove();  // إزالة الصف من الجدول بدون إعادة تحميل الصفحة
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    const row = document.querySelector(`#product-${productId}`);
+                    if (row) row.remove();
                 })
-                .catch((error) => console.error("Error:", error));
+                .catch(error => console.error("Error:", error));
         }
     }
 
-    // function deleteProduct(ProductId) {
-    //     if (confirm("Are you sure you want to delete this product?")) {
-    //         const formData = new FormData();
-    //         formData.append("action", "delete");
-    //         formData.append("product_id", ProductId); // التأكد من تطابق الاسم مع PHP
-    //
-    //         fetch("", {
-    //             method: "POST",
-    //             body: formData,
-    //         })
-    //             .then((response) => response.text())
-    //             .then((data) => {
-    //                 alert(data); // عرض رسالة التحقق
-    //                 location.reload();
-    //             })
-    //             .catch((error) => console.error("Error:", error));
-    //     }
-    // }
-
-
-    // جعل الصف قابلاً للتعديل
-    // جعل الصف قابلاً للتعديل
     function editProduct(row, productId) {
         const cells = row.querySelectorAll("td");
-        const editableFields = ["Product_name", "Description", "Specific_Type", "Price", "Quantity"];
+        const editableIndexes = [2, 3, 4, 5, 6]; // Name, Description, Type, Price, Quantity
+        const fieldNames = ["Product_name", "Description", "typess", "Price", "Quantity"];
 
         if (row.isEditing) {
-            // حفظ التعديلات
             const formData = new FormData();
             formData.append("action", "edit");
             formData.append("product_id", productId);
 
-            editableFields.forEach((field, index) => {
-                const cell = cells[index + 2]; // تجاوز العمود الأول (ID)
-                const inputValue = cell.querySelector("input").value; // أخذ قيمة الحقل المدخل
-                formData.append(field, inputValue);  // إضافة القيمة المعدلة إلى البيانات المرسلة
-                cell.innerText = inputValue;  // تحديث النص في الخلية
+            editableIndexes.forEach((index, i) => {
+                const value = cells[index].querySelector("input").value;
+                formData.append(fieldNames[i], value);
+                cells[index].innerText = value;
             });
 
-            // إرسال التعديل إلى الخادم
             fetch("", {
                 method: "POST",
-                body: formData,
+                body: formData
             })
-                .then((response) => response.text())
-                .then((data) => {
-                    alert(data);  // عرض رسالة التحقق
-                    row.isEditing = false;  // إلغاء وضع التعديل
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    row.isEditing = false;
                 })
-                .catch((error) => console.error("Error:", error));
+                .catch(error => console.error("Error:", error));
         } else {
-            // تحويل الصف إلى قابل للتعديل
-            editableFields.forEach((field, index) => {
-                const cell = cells[index + 2]; // تجاوز العمود الأول (ID)
-                const value = cell.innerText;
-                cell.innerHTML = `<input type="text" style="width: 70px; height:70px;" value="${value}" />`; // تحويل النص إلى حقل إدخال
+            editableIndexes.forEach(index => {
+                const value = cells[index].innerText;
+                cells[index].innerHTML = `<input type="text" value="${value}" style="width: 100%;">`;
             });
-
-            row.isEditing = true;  // تفعيل وضع التعديل
+            row.isEditing = true;
         }
     }
-
 </script>
-
-
-
 
 </body>
 </html>
