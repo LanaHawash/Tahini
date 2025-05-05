@@ -58,11 +58,11 @@
                     </div>
                 </div>
             </li>            <li class="dropdown">
-                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="index.php" class="nav-link">Explore</a>
                 <ul class="explore-menu" id="explore-submenu">
                     <li class="pe"><a href="ourStory.html">Our Story</a></li>
-                    <li class="pe"><a href="#">FAQ'S</a></li>
-                    <li class="pe"><a href="#">Contact Us</a></li>
+                    <li class="pe"><a href="FAQ.html">FAQ'S</a></li>
+                    <li class="pe"><a href="contactUs.html">Contact Us</a></li>
 
                 </ul>
             </li>            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>

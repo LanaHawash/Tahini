@@ -1,3 +1,120 @@
+
+
+<?php
+// إعداد الاتصال بقاعدة بيانات PostgreSQL
+$host = "localhost";
+$dbname = "tahini_db";
+$user = "postgres"; // عدّله إذا لزم الأمر
+$password = "12217336"; // استبدله بكلمة مرور PostgreSQL الفعلية
+
+$dsn = "pgsql:host=$host;dbname=$dbname";
+
+try {
+    $conn = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+
+// إضافة منتج جديد
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productName']) && $_POST['action'] === 'add') {
+    $productName = $_POST['productName'];
+    $description = $_POST['productDescription'];
+    $price = floatval($_POST['productPrice']);
+   // $type = $_POST['productType'];
+    $quantity = intval($_POST['quantity']);
+    $date = date('Y-m-d');
+
+    if (isset($_FILES['productImage']['tmp_name'])) {
+        $image = file_get_contents($_FILES['productImage']['tmp_name']);
+
+        $query = "INSERT INTO product (Product_name, Description, Price, Date, Quantity,Image)
+                  VALUES (:productName, :description, :price, :date, :quantity, :type, :image)";
+        $stmt = $conn->prepare($query);
+
+        try {
+            $stmt->execute([
+                ':productName' => $productName,
+                ':description' => $description,
+                ':price' => $price,
+                ':date' => $date,
+                ':quantity' => $quantity,
+                ':image' => $image
+            ]);
+            echo "<script>alert('Product added successfully!');</script>";
+        } catch (PDOException $e) {
+            echo "<script>alert('Error: " . $e->getMessage() . "');</script>";
+        }
+    }
+}
+
+// حذف منتج
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'delete') {
+    $productId = intval($_POST['product_id']);
+    $stmt = $conn->prepare("DELETE FROM product WHERE Product_id = :productId");
+
+    try {
+        $stmt->execute([':productId' => $productId]);
+        echo "Product deleted successfully!";
+    } catch (PDOException $e) {
+        echo "Error deleting product: " . $e->getMessage();
+    }
+    exit;
+}
+
+// تعديل منتج
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'edit') {
+    $productId = intval($_POST['product_id']);
+    $productName = $_POST['product_name'];
+    $description = $_POST['description'];
+    $price = floatval($_POST['price']);
+    $quantity = intval($_POST['quantity']);
+
+    $query = "UPDATE product SET 
+              product_name = :productName,
+              description = :description,
+              price = :price,
+              quantity = :quantity
+              WHERE product_id = :productId";
+
+    $stmt = $conn->prepare($query);
+
+    try {
+        $stmt->execute([
+            ':productName' => $productName,
+            ':description' => $description,
+            ':price' => $price,
+            ':quantity' => $quantity,
+            ':productId' => $productId
+        ]);
+        echo "Product updated successfully!";
+    } catch (PDOException $e) {
+        echo "Error updating product: " . $e->getMessage();
+    }
+    exit;
+}
+
+// جلب المنتجات لعرضها حسب النوع
+$filterType = isset($_GET['filterType']) ? $_GET['filterType'] : 'all';
+$whereClause = $filterType !== 'all' ? "WHERE Type = :filterType" : '';
+$query = "SELECT * FROM product $whereClause";
+
+$stmt = $conn->prepare($query);
+
+try {
+    if ($filterType !== 'all') {
+        $stmt->execute([':filterType' => $filterType]);
+    } else {
+        $stmt->execute();
+    }
+
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Error fetching products: " . $e->getMessage();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -227,7 +344,7 @@
     // جعل الصف قابلاً للتعديل
     function editProduct(row, productId) {
         const cells = row.querySelectorAll("td");
-        const editableFields = ["Product_name", "Description", "Type", "Specific_Type", "Price", "Quantity"];
+        const editableFields = ["Product_name", "Description", "Specific_Type", "Price", "Quantity"];
 
         if (row.isEditing) {
             // حفظ التعديلات
