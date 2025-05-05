@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <title>Tahini Product</title>
    <style>
        body {
@@ -24,7 +26,8 @@
        }
 
        .image-section img {
-           max-width: 401px;
+           cursor: zoom-in;
+           max-width: 375px;
            width: 106%;
            /* margin: auto; */
            padding: 8rem;
@@ -39,7 +42,7 @@
 
        .info-section h1 {
            font-size: 1.5rem;
-           margin: 0.5rem 0;
+           margin: 0;
        }
 
        .info-section .price {
@@ -56,22 +59,19 @@
            margin: 1rem 0;
        }
 
-       .add, .buy {
+       .add {
            padding: 0.75rem 1.5rem;
            border: none;
            cursor: pointer;
+           border-radius: 20px;
            margin-right: 1rem;
-       }
-
-       .add {
+           width: 125%;
            background: black;
            color: white;
        }
 
-       .buy {
-           background: white;
-           border: 2px solid black;
-       }
+
+
 
        .share {
            margin-top: 1rem;
@@ -80,7 +80,10 @@
        .share a {
            margin-right: 0.5rem;
            text-decoration: none;
-           color: #0077cc;
+           color: #0b0c0c;
+       }
+       i{
+           color: #0a0b0a;
        }
    </style>
 </head>
@@ -96,15 +99,17 @@
         <p class="stock">In stock, ready to ship</p>
         <div class="buttons">
             <button class="add">Add to cart</button>
-            <button class="buy">Buy it now</button>
+
         </div>
         <div class="share">
             <span>Share:</span>
-            <a href="#">Facebook</a>
-            <a href="#">X</a>
-            <a href="#">Pinterest</a>
-            <a href="#">WhatsApp</a>
+            <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"> </i></a>
+            <a href="https://twitter.com/intent/tweet?text=Tahini%200.5KG%20pack%20of%2024&url=https://harbrachatahini.com/products/tahini-0-5kg-pack-of-24">X</a>
+            <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/send?text=https://harbrachatahini.com/products/tahini-0-5kg-pack-of-24">WhatsApp</a>
             <a href="#">Email</a>
+            <a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a>
+
         </div>
     </div>
 </div>
