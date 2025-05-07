@@ -763,7 +763,12 @@ header {
     color: var(--white);
     font-size: 0.9rem;
 }
-
+.orders-list .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 0.9rem;
+}
 .orders-list .btn-action {
     margin: 0 1px;
     border: none;
@@ -773,7 +778,7 @@ header {
 }
 
 .orders-list .status.completed {
-    background-color: #070707;
+    background-color: green;
 }
 
 .orders-list .btn-check {
@@ -802,7 +807,6 @@ header {
     color: var(--white);
     padding: 10px 13px;
 }
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .orders-list{

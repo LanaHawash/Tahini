@@ -28,7 +28,7 @@ try {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_role'] = $user['role'];
-
+            $_SESSION['email'] = $user['email'];
             // Redirect based on role
             if ($user['role'] === 'admin') {
                 header("Location: ../Admin.html");
@@ -37,7 +37,10 @@ try {
             }
             exit;
         } else {
-            echo "Invalid email or password.";
+            echo "<script>
+                alert('Invalid email or password. Please try again.');
+                window.history.back(); // Redirect back to the previous page
+              </script>";
         }
     }
 } catch (PDOException $e) {

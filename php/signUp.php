@@ -36,7 +36,11 @@ try {
             ':password' => $hashedPassword
         ]);
 
-        echo "Registration successful!";
+        echo"<script>
+                    alert('Sign-Up successful! Welcome, $name.');
+                    window.location.href = '../index.php';
+                  </script>";
+
         // Redirect or show success message
     }
 } catch (PDOException $e) {

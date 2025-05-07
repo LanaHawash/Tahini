@@ -22,8 +22,11 @@ try {
         ':email' => $email,
         ':message' => $message
     ]);
-
-    echo "Message submitted successfully!";
+    echo"<script>
+                alert('✅ Thank you! Your message submitted successfully!');
+               window.location.href = '../contactUs.html'; // Redirect back to the previous page
+              </script>";
+    //echo "Message submitted successfully!";
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

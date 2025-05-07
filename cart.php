@@ -1,10 +1,7 @@
 <?php
 // Database config
 
-
-
- // Example user ID (normally from session)
-
+// Example user ID (normally from session)
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
@@ -21,6 +18,7 @@ $customer_id = $_SESSION['user_id'];
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
+    // Fetch cart items for the customer
     $stmt = $pdo->prepare("
         SELECT p.product_id, p.product_name, p.description, p.price, c.quantity
         FROM cart c
@@ -44,7 +42,6 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="cs/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-
 </head>
 <body>
 <div class="head">
@@ -56,22 +53,19 @@ try {
                 <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
             </ul>
         </div>
-        <div class= "cart-icon" onclick="openCart()">
+        <div class="cart-icon" onclick="openCart()">
             <a><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
 <header>
     <div class="navbar">
-
         <a href="index.php" class="logo-img"> <img src="img/icon.png" alt="logo"/></a>
         <div class="menu-toggle" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </div>
-
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-
             <li class="dropdown">
                 <a href="#" id="catalog-btn" class="nav-link">Catalog</a>
                 <div class="submenu" id="submenu">
@@ -99,23 +93,14 @@ try {
                     <li class="pe"><a href="ourStory.html">Our Story</a></li>
                     <li class="pe"><a href="FAQ.html">FAQ'S</a></li>
                     <li class="pe"><a href="contactUs.html">Contact Us</a></li>
-
                 </ul>
             </li>
             <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
         </ul>
-
-
         <div class="sign-in">
-
             <a href="#"> <i class="fa-regular fa-user"></i></a>
             <span>Sign In</span>
         </div>
-
-
-
-
-
     </div>
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
@@ -128,14 +113,9 @@ try {
             <button class="continue-btn">Continue Shopping ➜</button>
         </div>
     </div>
-
     <div class="overlay" id="overlay" onclick="closeCart()"></div>
-
     <script src="scripts/script.js"></script>
-
-
 </header>
-
 
 <div class="containerNew">
     <h2>Checkout</h2>
@@ -145,7 +125,7 @@ try {
     <?php
     $total = 0;
 
-    if (count($cartItems) === 0) {
+    if (empty($cartItems)) {
         echo "<p>Your cart is empty.</p>";
     } else {
         foreach ($cartItems as $item) {
@@ -154,7 +134,6 @@ try {
 
             echo "<div class='cart-item'>
                     <h4>{$item['product_name']}</h4>
-
                     <p>{$item['description']}</p>
                     <p>Price: \${$item['price']} | Quantity: {$item['quantity']}</p>
                     <p>Subtotal: \$" . number_format($lineTotal, 2) . "</p>
@@ -184,13 +163,10 @@ try {
             <label for="phone">Phone Number:</label>
             <input type="text" name="phone" required>
         </div>
-        <input type="hidden" name="customer_id" value="<?= $customer_id ?>">
+        <input type="hidden" name="customer_id" value="<?= htmlspecialchars($customer_id) ?>">
         <button type="submit" class="submit-btn">Place Order</button>
     </form>
 </div>
-
-
-
 
 <!-- Left Section: Information & Contact -->
 <footer class="footer">
@@ -227,8 +203,6 @@ try {
         </div>
     </div>
 </footer>
-
-
 
 </body>
 </html>

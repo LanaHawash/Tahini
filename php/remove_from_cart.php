@@ -23,7 +23,7 @@ try {
         ':product_id' => $product_id
     ]);
 
-    header("Location: cart.php");
+    header("Location: ../cart.php");
     exit;
 
 } catch (PDOException $e) {
