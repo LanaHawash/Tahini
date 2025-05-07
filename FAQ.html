@@ -189,14 +189,16 @@
   </div>
 
   <!-- Contact Form -->
-  <div class="contact-form">
+  <div class="contact-form" >
     <h3>Didn’t find your answer?</h3>
     <p>Don't hesitate to contact us.</p>
     <div class="contact-inputs">
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button>Send message</button>
+      <form action="php/contactUs.php" method="POST">
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <textarea name="message" placeholder="Message"></textarea>
+    <button type="submit" >Send message</button>
+      </form>
     </div>
   </div>
 </div>
