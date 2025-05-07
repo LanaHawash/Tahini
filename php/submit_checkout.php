@@ -82,6 +82,9 @@ try {
         ':customer_id' => $customer_id
     ]);
 
+
+
+
     // 5. Clear the cart
     $stmt = $pdo->prepare("DELETE FROM cart WHERE customer_id = :customer_id");
     $stmt->execute([':customer_id' => $customer_id]);
