@@ -1,10 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Tahini Product</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           background: #fafafa;
+           margin: 0;
+           padding: 2rem;
+       }
+
+       .product-container {
+           display: flex;
+           max-width: 1000px;
+           margin: auto;
+           background: white;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+           border-radius: 80px;
+           overflow: hidden;
+           height: 600px;
+       }
+
+       .image-section img {
+           cursor: zoom-in;
+           max-width: 375px;
+           width: 106%;
+           /* margin: auto; */
+           padding: 8rem;
+           height: 300px;
+           object-fit: cover;
+       }
+
+       .info-section {
+           padding: 8rem;
+           flex-grow: 1;
+       }
+
+       .info-section h1 {
+           font-size: 1.5rem;
+           margin: 0;
+       }
+
+       .info-section .price {
+           font-size: 1.2rem;
+           color: #444;
+       }
+
+       .info-section .stock {
+           color: green;
+           margin: 1rem 0;
+       }
+
+       .buttons {
+           margin: 1rem 0;
+       }
+
+       .add {
+           padding: 0.75rem 1.5rem;
+           border: none;
+           cursor: pointer;
+           border-radius: 20px;
+           margin-right: 1rem;
+           width: 125%;
+           background: black;
+           color: white;
+       }
+
+
+
+
+       .share {
+           margin-top: 1rem;
+       }
+
+       .share a {
+           margin-right: 0.5rem;
+           text-decoration: none;
+           color: #0b0c0c;
+       }
+       i{
+           color: #0a0b0a;
+       }
+   </style>
 </head>
 <body>
+<div class="product-container">
+    <div class="image-section">
+        <img src="img/Tahini3.jpg" alt="Tahini Pack" />
+    </div>
+    <div class="info-section">
+        <h2>Tahini Har Bracha</h2>
+        <h1>Tahini 0.5KG pack of 24</h1>
+        <p class="price">369.99 NIS</p>
+        <p class="stock">In stock, ready to ship</p>
+        <div class="buttons">
+            <button class="add">Add to cart</button>
 
+        </div>
+        <div class="share">
+            <span>Share:</span>
+            <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"> </i></a>
+            <a href="https://twitter.com/intent/tweet?text=Tahini%200.5KG%20pack%20of%2024&url=https://harbrachatahini.com/products/tahini-0-5kg-pack-of-24">X</a>
+            <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://web.whatsapp.com/send?text=https://harbrachatahini.com/products/tahini-0-5kg-pack-of-24">WhatsApp</a>
+            <a href="#">Email</a>
+            <a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
