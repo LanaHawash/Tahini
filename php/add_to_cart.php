@@ -5,7 +5,7 @@ session_start();
 
 if (!isset($_SESSION['user_id'])) {
     // Optional: redirect to login or return error
-    header('Location: php/signIN.php');
+    header('Location: ../sign_in.html');
     exit;
 }
 
@@ -62,7 +62,7 @@ try {
     }
 
     // Redirect to cart or same page
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 
 } catch (Exception $e) {

@@ -21,8 +21,8 @@
             <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
         </ul>
         </div>
-        <div class= "cart-icon" onclick="openCart()">
-            <a><i class="fa-solid fa-cart-shopping"></i></a>
+        <div class= "cart-icon">
+            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
@@ -70,11 +70,16 @@
 
 
     <div class="sign-in">
-
-        <a href="Sign_in.html"> <i class="fa-regular fa-user"></i></a>
-        <span>Sign In</span>
+        <?php
+        session_start();
+        if (isset($_SESSION['user_id'])): ?>
+            <a href="php/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <span>Logout</span>
+        <?php else: ?>
+            <a href="Sign_in.html"><i class="fa-regular fa-user"></i></a>
+            <span>Sign In</span>
+        <?php endif; ?>
     </div>
-
 
 
 
@@ -82,19 +87,6 @@
 </div>
 
 
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h2>Cart</h2>
-            <button class="close-btn" onclick="closeCart()">✖</button>
-        </div>
-        <div class="cart-content">
-            <h3>Your cart is currently empty.</h3>
-            <p>Not sure where to start? Try these collections:</p>
-            <button class="continue-btn">Continue Shopping ➜</button>
-        </div>
-    </div>
-
-    <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
 </header>
 <div class="slider">
