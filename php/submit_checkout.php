@@ -6,6 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// DB config
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
@@ -19,8 +20,9 @@ $customer_id = $_POST['customer_id'];
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Update user info
+    // 1. Update or insert user info
     $stmt = $pdo->prepare("
         INSERT INTO users (id, email, address, phone)
         VALUES (:id, :email, :address, :phone)
@@ -34,9 +36,9 @@ try {
         ':phone' => $phone
     ]);
 
-    // Fetch cart items
+    // 2. Fetch cart items
     $stmt = $pdo->prepare("
-        SELECT p.product_name, p.price, c.quantity
+        SELECT p.product_id, p.product_name, p.description, p.price, c.quantity
         FROM cart c
         JOIN product p ON c.product_id = p.product_id
         WHERE c.customer_id = :customer_id
@@ -44,39 +46,51 @@ try {
     $stmt->execute([':customer_id' => $customer_id]);
     $cartItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if (count($cartItems) === 0) {
-        echo "Your cart is empty. Cannot place an order.";
+    if (empty($cartItems)) {
+        echo "<p style='font-family: sans-serif; text-align: center; margin-top: 50px;'>
+                ❌ Your cart is empty. Cannot place an order.
+              </p>";
         exit;
     }
 
-    // Prepare order details and total
-    $orderDetails = "";
-    $total = 0;
-
+    // 3. Calculate total price
+    $total_price = 0;
     foreach ($cartItems as $item) {
-        $lineTotal = $item['price'] * $item['quantity'];
-        $total += $lineTotal;
-        $orderDetails .= "{$item['product_name']} (x{$item['quantity']}) - $" . number_format($lineTotal, 2) . "\n";
+        $total_price += $item['price'] * $item['quantity'];
     }
 
-    // Insert into orders table
+    // 4. Save order with JSON details
+    $orderDetails = [];
+
+    foreach ($cartItems as $item) {
+        $orderDetails[] = [
+            'product_name' => $item['product_name'],
+            'price' => $item['price'],
+            'quantity' => $item['quantity']
+        ];
+    }
+
+    $orderDetails = json_encode($orderDetails); // This is what gets saved
+
     $stmt = $pdo->prepare("
         INSERT INTO orders (order_date, order_details, status, total_price, customer_id)
-        VALUES (NOW(), :order_details, 'Pending', :total_price, :customer_id)
+        VALUES (CURRENT_DATE, :order_details, 'Processing', :total_price, :customer_id)
     ");
     $stmt->execute([
         ':order_details' => $orderDetails,
-        ':total_price' => $total,
+        ':total_price' => $total_price,
         ':customer_id' => $customer_id
     ]);
 
-    // Clear the cart
+    // 5. Clear the cart
     $stmt = $pdo->prepare("DELETE FROM cart WHERE customer_id = :customer_id");
     $stmt->execute([':customer_id' => $customer_id]);
 
+    // 6. Confirmation message
     echo "<p style='font-family: sans-serif; text-align: center; margin-top: 50px;'>
             ✅ Thank you! Your order has been placed successfully.
           </p>";
+
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
