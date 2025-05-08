@@ -5,7 +5,7 @@ session_start();
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217336';
+$pass = '12217343';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
