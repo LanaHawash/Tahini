@@ -91,35 +91,33 @@
 
 
 </header>
+<?php
+$host = 'localhost';
+$db = 'tahini_db';
+$user = 'postgres';
+$pass = '12217434';
+$dsn = "pgsql:host=$host;dbname=$db";
 
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $stmt = $pdo->query("SELECT product_name, image, description FROM product"); // Adjust columns if needed
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Database error: " . $e->getMessage());
+}
+?>
 <div class="products">
-  <div class="product-card">
-    <img src="img/tahini3KG.svg" alt="Tahini 3kg">
-    <div class="product-title">Tahini 3kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
-  </div>
-
-
-
-  <div class="product-card">
-    <img src="img/Tahini1KG.svg" alt="Tahini 1kg">
-    <div class="product-title">Tahini 1kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
-  </div>
-
-  <div class="product-card">
-    <img src="img/tahini0.5KG.svg" alt="Tahini 0.5kg">
-    <div class="product-title">Tahini 0.5kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
-  </div>
-
-  <div class="product-card">
-    <img src="img/tahiniWholeSesame.svg" alt="Tahini Whole Sesame">
-    <div class="product-title">Tahini Whole Sesame <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
-  </div>
-
-  <div class="product-card">
-    <img src="img/sub4.png" alt="Halva">
-    <div class="product-title">Halva <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
-  </div>
+    <?php foreach ($products as $product): ?>
+        <div class="product-card">
+            <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['product_name']) ?>">
+            <div class="product-title">
+                <?= htmlspecialchars($product['product_name']) ?>
+                <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span>
+            </div>
+        </div>
+    <?php endforeach; ?>
 </div>
+
 
 <!-- Left Section: Information & Contact -->
 <footer class="footer">

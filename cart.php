@@ -10,7 +10,7 @@ $dsn = "pgsql:host=$host;dbname=$db";
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: php/signIn.html");
+    header("Location: sign_in.html");
     exit;
 }
 
