@@ -150,12 +150,11 @@ header {
 .stat-card {
     display: flex;
     align-items: center;
-    gap: 15px;
-    background: linear-gradient(135deg, #151515, #d8edd8);
-
-    color: white;
+    gap: 30px;
+    background: linear-gradient(135deg, #151515, #ffffff);
+    color: #ffffff;
     box-shadow: var(--shadow);
-    border-radius: 10px;
+    border-radius: 27px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease;

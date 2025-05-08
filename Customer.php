@@ -120,10 +120,9 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tbody>
             </table>
         </div>
-
         <div class="send-notifications">
             <h3>Send Notifications</h3>
-            <form id="notification-form" method="POST" action="php/email.php">
+            <form id="notification-form" onsubmit="sendNotification(event);">
                 <div class="form-group">
                     <label for="notification-email">Recipient Email</label>
                     <input type="email" id="notification-email" name="email" placeholder="Click on a customer to select their email" required>
@@ -135,6 +134,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <button type="submit" class="btn-submit">Send Notification</button>
             </form>
         </div>
+
 
 
         <script>
@@ -201,15 +201,17 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Fill email field with customer's email when clicked
     // Fill email field with customer's email when clicked
     // عند النقر على عميل، يتم تعيين بريده الإلكتروني في الحقل الخاص
+    // Function to fill the email field when clicking on a customer
     function fillEmailField(email) {
         document.getElementById('notification-email').value = email;
         alert(`Email field filled with: ${email}`);
-        // يمكن جعل قسم الإشعارات مرئيًا (إن كان مخفيًا)
         document.querySelector('.send-notifications').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // إرسال الإشعار
-    function sendNotification() {
+    // Send the notification via fetch
+    function sendNotification(event) {
+        event.preventDefault(); // Prevent form submission
+
         const email = document.getElementById('notification-email').value;
         const message = document.getElementById('notification-message').value;
 
@@ -223,20 +225,20 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return;
         }
 
-        // إعداد البيانات لإرسالها عبر POST
+        // Prepare the data to be sent via POST
         const formData = new FormData();
         formData.append('email', email);
         formData.append('message', message);
 
-        // إرسال الطلب عبر fetch إلى ملف PHP
-        fetch('email.php', {
+        // Send the request via fetch to the PHP script
+        fetch('php/email.php', {
             method: 'POST',
             body: formData,
         })
             .then((response) => response.text())
             .then((data) => {
-                alert(data); // عرض الرسالة المستلمة من الخادم
-                // إعادة تعيين الحقول بعد الإرسال
+                alert(data); // Show the response from the server
+                // Reset the fields after sending
                 document.getElementById('notification-email').value = '';
                 document.getElementById('notification-message').value = '';
             })

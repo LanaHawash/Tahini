@@ -12,7 +12,22 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
+$sql_customers = "SELECT COUNT(*) AS total_customers FROM users"; // Assuming "users" is the correct table name
+$stmt_customers = $pdo->query($sql_customers);
+$row_customers = $stmt_customers->fetch(PDO::FETCH_ASSOC);
+$total_customers = $row_customers['total_customers'];
 
+// Query to count the total number of products
+$sql_products = "SELECT COUNT(*) AS total_products FROM product"; // Assuming "products" is the correct table name
+$stmt_products = $pdo->query($sql_products);
+$row_products = $stmt_products->fetch(PDO::FETCH_ASSOC);
+$total_products = $row_products['total_products'];
+
+// Query to count the total number of orders
+$sql_orders = "SELECT COUNT(*) AS total_orders FROM orders"; // Assuming "orders" is the correct table name
+$stmt_orders = $pdo->query($sql_orders);
+$row_orders = $stmt_orders->fetch(PDO::FETCH_ASSOC);
+$total_orders = $row_orders['total_orders'];
 // Query to fetch the overview data
 try {
     $stmt = $pdo->query("SELECT rating_id, message, email, cust_name FROM overview");
@@ -63,7 +78,32 @@ try {
 
     </header>
 
-    <!-- Overview Table -->
+        <section class="dashboard-stats">
+
+            <div class="stat-card" style="width: 349px;">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h3><?php echo $total_customers; ?></h3>
+                    <p>Customers</p>
+                </div>
+            </div>
+            <div class="stat-card" style="width: 335px">
+                <i class="fas fa-box"></i>
+                <div>
+                    <h3><?php echo $total_products; ?></h3>
+                    <p>Products</p>
+                </div>
+            </div>
+            <div class="stat-card" style="width: 335px">
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <h3><?php echo $total_orders; ?></h3>
+                    <p>Orders</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Table -->
     <div class="customers-list">
         <h3>All Overview</h3>
         <table>
