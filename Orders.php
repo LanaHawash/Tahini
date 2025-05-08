@@ -100,7 +100,7 @@ try {
                 </a>
             </div>
             <div class="menu-item">
-                <a href="#" class="activeM">
+                <a href="Productsad.php" class="activeM">
                     <i class="fa-solid fa-bowl-food"></i>
                     <span>Products</span>
                 </a>

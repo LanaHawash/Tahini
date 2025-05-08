@@ -38,10 +38,10 @@
             <li class="dropdown">
                 <a href="catalog.php" id="catalog-btn" class="nav-link">Catalog</a>
                 <div class="submenu" id="submenu">
-                    <div class="media-card">
+                    <a class="media-card" href="tahini.php">
                         <img src="img/sub1.png" alt="Tahini 1kg">
                         <p>Tahini 1kg <span class="arrow">→</span></p>
-                    </div>
+                    </a>
                     <div class="media-card">
                         <img src="img/sub2.png" alt="Tahini 0.5kg">
                         <p>Tahini 0.5kg <span class="arrow">→</span></p>
@@ -50,10 +50,10 @@
                         <img src="img/sub3.png" alt="Tahini Whole Sesame">
                         <p>Tahini Whole Sesame <span class="arrow">→</span> </p>
                     </div>
-                    <div class="media-card">
+                    <a class="media-card" href="halva.php">
                         <img src="img/sub4.png" alt="Halva">
                         <p>Halva <span class="arrow">→</span></p>
-                    </div>
+                    </a>
                 </div>
             </li>
             <li class="dropdown">

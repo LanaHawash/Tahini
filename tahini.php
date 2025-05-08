@@ -8,7 +8,7 @@ $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
-    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product");
+    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product where type='Tahini'");
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database error: " . $e->getMessage());
@@ -91,23 +91,23 @@ try {
 <!-- Product Modal -->
 <div id="productModal" class="modal ">
     <div class="modal-header">
-    <div class="image-section">
-        <img id="modalImage" src="" alt="Product Image">
+        <div class="image-section">
+            <img id="modalImage" src="" alt="Product Image">
+        </div>
+        <div class="modal-content" >
+            <span class="close-button" onclick="closeModal()">×</span>
+
+            <h2 id="modalTitle" class="title" ></h2>
+            <h4 class="description" id="modalDescription" ></h4>
+            <p id="modalPrice" class="price"></p>
+            <form method="POST" action="php/add_to_cart.php">
+
+                <input type="hidden" name="product_id" id="modalProductId">
+
+                <button type="submit" class="add">Add to cart</button>
+            </form>
+        </div>
     </div>
-    <div class="modal-content" >
-        <span class="close-button" onclick="closeModal()">×</span>
-
-        <h2 id="modalTitle" class="title" ></h2>
-        <h4 class="description" id="modalDescription" ></h4>
-        <p id="modalPrice" class="price"></p>
-        <form method="POST" action="php/add_to_cart.php">
-
-            <input type="hidden" name="product_id" id="modalProductId">
-
-            <button type="submit" class="add">Add to cart</button>
-        </form>
-    </div>
-</div>
 </div>
 
 

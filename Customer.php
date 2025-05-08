@@ -68,7 +68,7 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="sidebar-menu">
             <div class="menu-item"><a href="Admin.php"><i class="fas fa-home"></i><span>Home</span></a></div>
             <div class="menu-item"><a href="Productsad.php"><i class="fa-solid fa-bowl-food"></i><span>Products</span></a></div>
-            <div class="menu-item"><a href="#" class="activeM"><i class="fa-solid fa-user-group"></i><span>Customers</span></a></div>
+            <div class="menu-item"><a href="Customer.php" class="activeM"><i class="fa-solid fa-user-group"></i><span>Customers</span></a></div>
             <div class="menu-item"><a href="Orders.php"><i class="fa-solid fa-basket-shopping"></i><span>Orders</span></a></div>
         </div>
         <div align="center">
