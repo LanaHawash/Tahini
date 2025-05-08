@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class= "cart-icon" >
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" style="color:white"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>

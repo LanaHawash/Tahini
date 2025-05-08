@@ -22,7 +22,7 @@
         </ul>
         </div>
         <div class= "cart-icon">
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" style="color:white"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
@@ -96,21 +96,21 @@
             <img src="img/Tahiniheader.webp" alt="Tahini Slide 1">
             <div class="hero-details">
                 <h3>Welcome to Har Bracha Tahini!!</h3>
-                <a href="#" class="button">Join Us</a>
+                <a href="./contactUs.php" class="button">Join Us</a>
             </div>
         </div>
         <div class="slide">
             <img src="img/Tahini3.jpg" alt="Tahini Slide 2">
             <div class="hero-details">
                 <h3>The Best Or Nothing!!!</h3>
-                <a href="#" class="button">Buy Now</a>
+                <a href="./catalog.php" class="button">Buy Now</a>
             </div>
         </div>
         <div class="slide">
             <img src="img/factory.jpg" alt="Tahini Slide 3">
             <div class="hero-details">
                 <h3>Handcrafted for You</h3>
-                <a href="#" class="button">Explore More</a>
+                <a href="./ourStory.php" class="button">Explore More</a>
             </div>
         </div>
     </div>
@@ -152,7 +152,7 @@
         <p class="descriptions">Experience the authentic taste of Har Bracha Tahini, crafted from the finest sesame seeds. This video reveals the care and tradition behind every jar, bringing quality and flavor to your table.</p>
 
         <div class="bb">
-            <a href="#" class="button">
+            <a href="./catalog.php" class="button">
                 shop now <span class="arrow">→</span>
             </a>
         </div>
@@ -163,7 +163,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217336';
+$pass = '12217434';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -263,7 +263,7 @@ cartContent.innerHTML = cartItems.map(item => `
         <p class="descriptions">Our sesame seeds, sourced from Ethiopia's rich soils, are known for their exceptional quality. Partnering with trusted suppliers, we ensure every seed meets the highest standards.</p>
 
         <div class="bb">
-            <a href="#" class="button">
+            <a href="./ourHistory.php" class="button">
                 Read More <span class="arrow">→</span>
             </a>
         </div>
@@ -276,7 +276,7 @@ cartContent.innerHTML = cartItems.map(item => `
         <div class="footer-info">
             <h3>Information</h3>
             <ul>
-                <li><a href="#">Search</a></li>
+
                 <li><a href="catalog.php">Catalog</a></li>
                 <li><a href="ourStory.php">Our Story</a></li>
                 <li><a href="#">Privacy Policy</a></li>

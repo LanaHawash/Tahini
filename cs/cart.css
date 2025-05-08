@@ -52,3 +52,17 @@ input[type="text"], input[type="email"] {
 .submit-btn:hover {
     background-color: #218838;
 }
+.qty-btn {
+    padding: 6px 12px;
+    background-color: #eee;
+    border:none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.qty-btn:hover {
+    background-color: #ddd;
+}

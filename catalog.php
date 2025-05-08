@@ -34,7 +34,7 @@ try {
             </ul>
         </div>
         <div class="cart-icon">
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" style="color:white"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
@@ -98,11 +98,18 @@ try {
         <span class="close-button" onclick="closeModal()">×</span>
 
         <h2 id="modalTitle" class="title" ></h2>
+        <h4 class="description" id="modalDescription" ></h4>
         <p id="modalPrice" class="price"></p>
-        <button class="add">Add to cart</button>
+        <form method="POST" action="php/add_to_cart.php">
+
+            <input type="hidden" name="product_id" id="modalProductId">
+
+            <button type="submit" class="add">Add to cart</button>
+        </form>
     </div>
 </div>
 </div>
+
 
 <footer class="footer">
     <div class="footer-container">
@@ -142,7 +149,6 @@ try {
         fetch(`php/get_product.php?id=${productId}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.error) {
                     alert("Product not found");
                     return;
@@ -151,12 +157,14 @@ try {
                 document.getElementById('modalImage').src = data.image;
                 document.getElementById('modalTitle').textContent = data.product_name;
                 document.getElementById('modalPrice').textContent = data.price + ' NIS';
+                document.getElementById('modalDescription').textContent = data.description;
+                document.getElementById('modalProductId').value = data.product_id;
 
                 document.getElementById('productModal').style.display = 'flex';
                 document.body.classList.add('modal-open');
             })
             .catch(err => {
-                console.error(err);
+                console.error("Fetch error:", err);
                 alert("Error loading product");
             });
     }

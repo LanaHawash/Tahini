@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div class= "cart-icon" >
-      <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="cart.php" style="color:white"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
   </div>
 </div>
@@ -86,19 +86,6 @@
 
 
   </div>
-  <div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-      <h2>Cart</h2>
-      <button class="close-btn" onclick="closeCart()">✖</button>
-    </div>
-    <div class="cart-content">
-      <h3>Your cart is currently empty.</h3>
-      <p>Not sure where to start? Try these collections:</p>
-      <button class="continue-btn">Continue Shopping ➜</button>
-    </div>
-  </div>
-
-  <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
   <script src="scripts/script.js"></script>
 

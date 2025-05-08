@@ -5,7 +5,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217336';
+$pass = '12217434';
 $dsn = "pgsql:host=$host;dbname=$db";
 session_start();
 
@@ -54,7 +54,7 @@ try {
             </ul>
         </div>
         <div class="cart-icon">
-            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart.php" style="color:white"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
@@ -130,21 +130,28 @@ try {
             $total += $lineTotal;
 
             echo "<div class='cart-item'>
-                    <h4>{$item['product_name']}</h4>
-                    <p>{$item['description']}</p>
-                    <p>Price: \${$item['price']} | Quantity: {$item['quantity']}</p>
-                    <p>Subtotal: \$" . number_format($lineTotal, 2) . "</p>
-                    <form method='POST' action='php/remove_from_cart.php'>
-                        <input type='hidden' name='product_id' value='{$item['product_id']}'>
-                        <input type='hidden' name='customer_id' value='{$customer_id}'>
-                        <button type='submit' class='submit-btn' style='background-color:#dc3545;'>Remove</button>
-                    </form>
-                  </div><hr>";
+                <h4>{$item['product_name']}</h4>
+                <p>{$item['description']}</p>
+                <p>Price: {$item['price']} NIS</p>
+                <form method='POST' action='php/update_quantity.php' style='display: flex; gap: 10px; align-items: center;'>
+                    <input type='hidden' name='product_id' value='{$item['product_id']}'>
+                    <p>Quantity:</p>
+                    <button type='submit' name='action' value='decrease' class='qty-btn'>−</button>
+                    <span>{$item['quantity']}</span>
+                    <button type='submit' name='action' value='increase' class='qty-btn'>+</button>
+                </form>
+                <p>Subtotal: " . number_format($lineTotal, 2) . " NIS</p>
+                <form method='POST' action='php/remove_from_cart.php'>
+                    <input type='hidden' name='product_id' value='{$item['product_id']}'>
+                    <button type='submit' class='submit-btn' style='background-color:#dc3545;'>Remove</button>
+                </form>
+              </div><hr>";
         }
 
-        echo "<h3>Total: \$" . number_format($total, 2) . "</h3>";
+        echo "<h3>Total: " . number_format($total, 2) . " NIS</h3>";
     }
     ?>
+
 
     <!-- Checkout Form -->
     <form action="php/submit_checkout.php" method="POST">

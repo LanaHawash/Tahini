@@ -48,13 +48,9 @@
 .icons1 i:hover{
     color:#cccccc;
 }
-.head .cart-icon i {
 
 
-
-}
-
-.head .cart-icon {
+.head .cart-icon i{
     /* position: relative;
      top: 20px;
      right: 20px;*/
@@ -87,20 +83,7 @@
 }
 
 /* Cart Sidebar */
-.cart-sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 350px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    z-index: 100;
-}
+
 
 /* Cart Header */
 .cart-header {
