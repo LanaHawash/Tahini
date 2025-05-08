@@ -142,7 +142,7 @@ try {
 
         <div class="sidebar-menu">
             <div class="menu-item">
-                <a href="Admin.html">
+                <a href="Admin.php">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
@@ -154,7 +154,7 @@ try {
                 </a>
             </div>
             <div class="menu-item">
-                <a href="Customer.html">
+                <a href="Customer.php">
                     <i class="fa-solid fa-user-group"></i>
                     <span>Customers</span>
                 </a>

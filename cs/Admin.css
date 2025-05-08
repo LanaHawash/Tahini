@@ -767,6 +767,7 @@ header {
     padding: 5px 10px;
     border-radius: 5px;
     color: var(--white);
+    background-color: #333333;
     font-size: 0.9rem;
 }
 .orders-list .btn-action {
@@ -778,6 +779,7 @@ header {
 }
 
 .orders-list .status.completed {
+    color: white;
     background-color: green;
 }
 
@@ -788,6 +790,7 @@ header {
 }
 
 .orders-list .status.pending {
+    color: white;
     background-color: orange;
     padding: 5px 17px;
 }
@@ -799,6 +802,7 @@ header {
 }
 
 .orders-list .status.cancelled {
+    color: white;
     background-color: red;
 }
 

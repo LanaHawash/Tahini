@@ -5,7 +5,7 @@ session_start();
 $host = 'localhost';
 $dbname = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);
@@ -31,7 +31,7 @@ try {
             $_SESSION['email'] = $user['email'];
             // Redirect based on role
             if ($user['role'] === 'admin') {
-                header("Location: ../Admin.html");
+                header("Location: ../Admin.php");
             } else {
                 header("Location: ../index.php");
             }

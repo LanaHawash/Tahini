@@ -4,7 +4,7 @@
 $host = 'localhost';
 $dbname = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass);

@@ -94,7 +94,7 @@ try {
 
         <div class="sidebar-menu">
             <div class="menu-item">
-                <a href="Admin.html">
+                <a href="Admin.php">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
@@ -106,7 +106,7 @@ try {
                 </a>
             </div>
             <div class="menu-item">
-                <a href="Customer.html">
+                <a href="Customer.php">
                     <i class="fa-solid fa-user-group"></i>
                     <span>Customers</span>
                 </a>
@@ -162,7 +162,7 @@ try {
                             <td><?= htmlspecialchars($row['customer_name']) ?></td>
                             <td><?= htmlspecialchars($row['products']) ?></td>
                             <td><span class="status <?= strtolower($row['status']) ?>"><?= htmlspecialchars($row['status']) ?></span></td>
-                            <td>NIS<?= htmlspecialchars($row['total_price']) ?></td>
+                            <td><?= htmlspecialchars($row['total_price']) ?>NIS</td>
                             <td><?= htmlspecialchars($row['order_date']) ?></td>
                             <td>
                                 <button class="btn-action" data-id="<?= $row['order_id'] ?>" data-status="Completed">✔️</button>

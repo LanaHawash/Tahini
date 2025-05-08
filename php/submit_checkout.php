@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 $email = $_POST['email'];
@@ -73,53 +73,57 @@ try {
     $orderDetailsJson = json_encode($orderDetails);
 
     // Step 5: Insert into the orders table
-    try {
+    $stmt = $pdo->prepare("
+        INSERT INTO orders (order_date, order_details, status, total_price, customer_id)
+        VALUES (CURRENT_DATE, :order_details, 'Processing', :total_price, :customer_id)
+    ");
+    $stmt->execute([
+        ':order_details' => $orderDetailsJson,
+        ':total_price' => $total_price,
+        ':customer_id' => $customer_id
+    ]);
+
+    // Get the last inserted order_id
+    $order_id = $pdo->lastInsertId();
+
+    // Step 6: Insert into product_orders table and update product quantity
+    foreach ($cartItems as $item) {
+        $product_id = $item['product_id'];
+        $quantity = $item['quantity'];
+
+        // Insert into product_orders table
         $stmt = $pdo->prepare("
-            INSERT INTO orders (order_date, order_details, status, total_price, customer_id)
-            VALUES (CURRENT_DATE, :order_details, 'Processing', :total_price, :customer_id)
+            INSERT INTO product_orders (order_id, product_id, quantity)
+            VALUES (:order_id, :product_id, :quantity)
         ");
         $stmt->execute([
-            ':order_details' => $orderDetailsJson,
-            ':total_price' => $total_price,
-            ':customer_id' => $customer_id
+            ':order_id' => $order_id,
+            ':product_id' => $product_id,
+            ':quantity' => $quantity
         ]);
 
-        // Get the last inserted order_id
-        $order_id = $pdo->lastInsertId();
-
-        // Step 6: Insert into product_orders table for each product and its quantity
-        foreach ($cartItems as $item) {
-            $product_id = $item['product_id'];
-            $quantity = $item['quantity'];
-
-            // Insert into product_orders
-            $stmt = $pdo->prepare("
-                INSERT INTO product_orders (order_id, product_id, quantity)
-                VALUES (:order_id, :product_id, :quantity)
-            ");
-            $stmt->execute([
-                ':order_id' => $order_id,
-                ':product_id' => $product_id,
-                ':quantity' => $quantity
-            ]);
-        }
-
-        // Step 7: Clear the cart
-        $stmt = $pdo->prepare("DELETE FROM cart WHERE customer_id = :customer_id");
-        $stmt->execute([':customer_id' => $customer_id]);
-
-        // Success response
-       // echo json_encode(['success' => true, 'message' => 'Order placed successfully!']);
-        echo"<script>
-                alert('✅ Thank you! Your order has been placed successfully.');
-               window.location.href = '../index.php'; // Redirect back to the previous page
-              </script>";
-        // Confirmation message
-       // echo "<p style='font-family: sans-serif; text-align: center; margin-top: 50px;'>✅ Thank you! Your order has been placed successfully.</p>";
-
-    } catch (PDOException $e) {
-        echo json_encode(['error' => 'Error: ' . $e->getMessage()]);
+        // Decrease the quantity in the product table
+        $stmt = $pdo->prepare("
+            UPDATE product
+            SET quantity = quantity - :ordered_quantity
+            WHERE product_id = :product_id AND quantity >= :ordered_quantity
+        ");
+        $stmt->execute([
+            ':ordered_quantity' => $quantity,
+            ':product_id' => $product_id
+        ]);
     }
+
+    // Step 7: Clear the cart
+    $stmt = $pdo->prepare("DELETE FROM cart WHERE customer_id = :customer_id");
+    $stmt->execute([':customer_id' => $customer_id]);
+
+    // Success response
+    echo "<script>
+            alert('✅ Thank you! Your order has been placed successfully.');
+            window.location.href = '../index.php';
+          </script>";
+
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

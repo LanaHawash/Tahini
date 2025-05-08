@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'tahini_db';
 $user = 'postgres';
-$password = '12217434';
+$password = '12217336';
 
 
 
@@ -38,7 +38,7 @@ try {
 
         echo"<script>
                     alert('Sign-Up successful! Welcome, $name.');
-                    window.location.href = '../index.php';
+                    window.location.href = '../Sign_in.html';
                   </script>";
 
         // Redirect or show success message

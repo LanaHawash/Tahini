@@ -5,7 +5,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 session_start();
 
@@ -99,7 +99,7 @@ try {
         </ul>
         <div class="sign-in">
             <?php
-            session_start();
+
             if (isset($_SESSION['user_id'])): ?>
                 <a href="php/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                 <span>Logout</span>
