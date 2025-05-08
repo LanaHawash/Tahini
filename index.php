@@ -38,7 +38,7 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="dropdown">
-                <a href="catalog.html" id="catalog-btn" class="nav-link">Catalog</a>
+                <a href="catalog.php" id="catalog-btn" class="nav-link">Catalog</a>
                 <div class="submenu" id="submenu">
                     <div class="media-card">
                         <img src="img/sub1.png" alt="Tahini 1kg">
@@ -60,12 +60,12 @@
             </li>            <li class="dropdown">
                 <a href="index.php" class="nav-link">Explore</a>
                 <ul class="explore-menu" id="explore-submenu">
-                    <li class="pe"><a href="ourStory.html">Our Story</a></li>
-                    <li class="pe"><a href="FAQ.html">FAQ'S</a></li>
-                    <li class="pe"><a href="contactUs.html">Contact Us</a></li>
+                    <li class="pe"><a href="ourStory.php">Our Story</a></li>
+                    <li class="pe"><a href="./FAQ.php">FAQ'S</a></li>
+                    <li class="pe"><a href="./contactUs.php">Contact Us</a></li>
 
                 </ul>
-            </li>            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
+            </li>            <li class="nav-item"><a href="contactUs.php" class="nav-link">Contact</a></li>
         </ul>
 
 
@@ -89,6 +89,7 @@
 
 
 </header>
+
 <div class="slider">
     <div class="slides">
         <div class="slide">
@@ -124,7 +125,7 @@
             <span class="highlight">Tahini</span>
         </h2>
         <div class="buttond">
-            <a href="ourStory.html" class="btn">
+            <a href="ourStory.php" class="btn">
                 Our Story <span class="arrow">→</span>
             </a>
         </div>
@@ -276,8 +277,8 @@ cartContent.innerHTML = cartItems.map(item => `
             <h3>Information</h3>
             <ul>
                 <li><a href="#">Search</a></li>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="ourStory.html">Our Story</a></li>
+                <li><a href="catalog.php">Catalog</a></li>
+                <li><a href="ourStory.php">Our Story</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Refund Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
@@ -296,9 +297,9 @@ cartContent.innerHTML = cartItems.map(item => `
                 <button type="submit">➜</button>
             </form>
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>

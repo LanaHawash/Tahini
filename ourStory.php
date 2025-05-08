@@ -19,8 +19,8 @@
                 <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
             </ul>
         </div>
-        <div class= "cart-icon" onclick="openCart()">
-            <a><i class="fa-solid fa-cart-shopping"></i></a>
+        <div class= "cart-icon" >
+            <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="dropdown">
-                <a href="#" id="catalog-btn" class="nav-link">Catalog</a>
+                <a href="catalog.php" id="catalog-btn" class="nav-link">Catalog</a>
                 <div class="submenu" id="submenu">
                     <div class="media-card">
                         <img src="img/sub1.png" alt="Tahini 1kg">
@@ -59,38 +59,28 @@
                 <a href="index.php" class="nav-link">Explore</a>
                 <ul class="explore-menu" id="explore-submenu">
                     <li class="pe"><a href="ourStory.html">Our Story</a></li>
-                    <li class="pe"><a href="FAQ.html">FAQ'S</a></li>
-                    <li class="pe"><a href="contactUs.html">Contact Us</a></li>
+                    <li class="pe"><a href="./FAQ.php">FAQ'S</a></li>
+                    <li class="pe"><a href="./contactUs.php">Contact Us</a></li>
                 </ul>
-            <li class="nav-item"><a href="contactUs.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="contactUs.php" class="nav-link">Contact</a></li>
         </ul>
 
-
         <div class="sign-in">
-
-            <a href="Sign_in.html"> <i class="fa-regular fa-user"></i></a>
+            <?php
+        session_start();
+        if (isset($_SESSION['user_id'])): ?>
+            <a href="php/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <span>Logout</span>
+            <?php else: ?>
+            <a href="Sign_in.html"><i class="fa-regular fa-user"></i></a>
             <span>Sign In</span>
+            <?php endif; ?>
         </div>
-
 
 
 
 
     </div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h2>Cart</h2>
-            <button class="close-btn" onclick="closeCart()">✖</button>
-        </div>
-        <div class="cart-content">
-            <h3>Your cart is currently empty.</h3>
-            <p>Not sure where to start? Try these collections:</p>
-            <button class="continue-btn">Continue Shopping ➜</button>
-        </div>
-    </div>
-
-    <div class="overlay" id="overlay" onclick="closeCart()"></div>
-
 
 
 
@@ -117,7 +107,7 @@
         <p>Abdallah Wasef started small, in 1997, he started trading high-quality Ethiopian sesame seeds, and eventually founded Abdallah Wasef and Sons with his sons, focusing on quality.</p>
         <p>He later partnered with his cousins to open Har Bracha Tahini, using traditional methods to produce smooth, flavorful tahini.</p>
         <p>Har Bracha Tahini quickly gained international recognition for its premium products and now exports globally, staying true to the family’s vision.</p>
-        <a href="ourHistory.html" class="history-btn">Our History →</a>
+        <a href="ourHistory.php" class="history-btn">Our History →</a>
     </div>
 </div>
 <div class="container_menu">
@@ -241,9 +231,9 @@
                 <button type="submit">➜</button>
             </form>
             <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us</title>
+  <title>Backup</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="cs/contactUs.css">
+  <link rel="stylesheet" href="cs/catalog.css">
   <link rel="stylesheet" href="cs/backUp.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -19,8 +19,8 @@
         <li><a href="https://www.tiktok.com/@tahiniharbracha"> <i class="fa-brands fa-tiktok"></i></a></li>
       </ul>
     </div>
-    <div class= "cart-icon" onclick="openCart()">
-      <a><i class="fa-solid fa-cart-shopping"></i></a>
+    <div class= "cart-icon" >
+      <a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
     </div>
   </div>
 </div>
@@ -35,7 +35,7 @@
     <ul class="nav-menu">
       <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
       <li class="dropdown">
-        <a href="#" id="catalog-btn" class="nav-link">Catalog</a>
+        <a href="catalog.php" id="catalog-btn" class="nav-link">Catalog</a>
         <div class="submenu" id="submenu">
           <div class="media-card">
             <img src="img/sub1.png" alt="Tahini 1kg">
@@ -58,21 +58,27 @@
       <li class="dropdown">
         <a href="index.php" class="nav-link">Explore</a>
         <ul class="explore-menu" id="explore-submenu">
-          <li class="pe"><a href="ourStory.html">Our Story</a></li>
-          <li class="pe"><a href="FAQ.html">FAQ'S</a></li>
-          <li class="pe"><a href="contactUs.html">Contact Us</a></li>
+          <li class="pe"><a href="ourStory.php">Our Story</a></li>
+          <li class="pe"><a href="FAQ.php">FAQ'S</a></li>
+          <li class="pe"><a href="contactUs.php">Contact Us</a></li>
 
         </ul>
       </li>
-      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
+      <li class="nav-item"><a href="contactUs.php" class="nav-link">Contact</a></li>
     </ul>
 
 
+
     <div class="sign-in">
-
-      <a href="Sign_in.html"> <i class="fa-regular fa-user"></i></a>
+      <?php
+        session_start();
+        if (isset($_SESSION['user_id'])): ?>
+      <a href="php/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+      <span>Logout</span>
+      <?php else: ?>
+      <a href="Sign_in.html"><i class="fa-regular fa-user"></i></a>
       <span>Sign In</span>
+      <?php endif; ?>
     </div>
 
 
@@ -80,76 +86,42 @@
 
 
   </div>
-  <div class="cart-sidebar" id="cartSidebar">
-    <div class="cart-header">
-      <h2>Cart</h2>
-      <button class="close-btn" onclick="closeCart()">✖</button>
-    </div>
-    <div class="cart-content">
-      <h3>Your cart is currently empty.</h3>
-      <p>Not sure where to start? Try these collections:</p>
-      <button class="continue-btn">Continue Shopping ➜</button>
-    </div>
-  </div>
-
-  <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
   <script src="scripts/script.js"></script>
 
 
 </header>
 
-
-
-<section class="contact-section">
-  <div class="contact-container">
-    <!-- Contact Form Section -->
-    <div class="contact-form">
-      <h2>Contact Us</h2>
-      <a href="https://www.google.com/maps/place/Samaritan+milling+plant/@32.2040109,35.2791385,14.06z/data=!4m6!3m5!1s0x151ce090bcfaba83:0x316942445bb09476!8m2!3d32.2042361!4d35.2727401!16s%2Fg%2F11c57dggd5?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-btn">
-        Our Location →
-      </a>
-      <form action="php/contactUs.php" method="POST">
-        <input class="name" type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit" class="send-btn">Send message</button>
-      </form>
-    </div>
-
-    <!-- Map Section -->
-    <div class="contact-map">
-    <img src="img/map.png" alt="map" class="map-img">
-    </div>
+<div class="products">
+  <div class="product-card">
+    <img src="img/tahini3KG.svg" alt="Tahini 3kg">
+    <div class="product-title">Tahini 3kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
   </div>
-</section>
 
 
 
-
-
-<div class="info-container">
-  <div class="info-box">
-    <i class="fas fa-headset icon"></i>
-    <h3>Customer service</h3>
-    <p>It’s not actually free we just price it into the products.</p>
+  <div class="product-card">
+    <img src="img/Tahini1KG.svg" alt="Tahini 1kg">
+    <div class="product-title">Tahini 1kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
   </div>
-  <div class="info-box">
-    <i class="fas fa-truck icon"></i>
-    <h3>Fast Free Shipping</h3>
-    <p>Yes, We do offer Free shipping!</p>
+
+  <div class="product-card">
+    <img src="img/tahini0.5KG.svg" alt="Tahini 0.5kg">
+    <div class="product-title">Tahini 0.5kg <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
   </div>
-  <div class="info-box">
-    <i class="fas fa-lock icon"></i>
-    <h3>Secure payment</h3>
-    <p>Your payment information is processed securely</p>
+
+  <div class="product-card">
+    <img src="img/tahiniWholeSesame.svg" alt="Tahini Whole Sesame">
+    <div class="product-title">Tahini Whole Sesame <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
+  </div>
+
+  <div class="product-card">
+    <img src="img/sub4.png" alt="Halva">
+    <div class="product-title">Halva <span><i class="fa-solid fa-arrow-right" style="color: #000000;"></i></span></div>
   </div>
 </div>
 
-
-
-
-
+<!-- Left Section: Information & Contact -->
 <footer class="footer">
   <div class="footer-container">
     <!-- Left Section: Information & Contact -->
@@ -176,11 +148,11 @@
         <input type="email" placeholder="Enter your email" required>
         <button type="submit">➜</button>
       </form>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
+        </div>
     </div>
   </div>
 </footer>
