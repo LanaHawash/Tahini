@@ -42,12 +42,31 @@ try {
         }
 
         // Delete Product
+        // Delete Product
         elseif ($_POST['action'] === 'delete') {
-            $stmt = $pdo->prepare("DELETE FROM product WHERE product_id = :id");
-            $stmt->execute([':id' => $_POST['product_id']]);
-            echo "Product deleted successfully!";
+            try {
+                // Start a transaction
+                $pdo->beginTransaction();
+
+                // Delete related entries from the product_orders table
+                $stmt = $pdo->prepare("DELETE FROM product_orders WHERE product_id = :id");
+                $stmt->execute([':id' => $_POST['product_id']]);
+
+                // Now delete the product itself
+                $stmt = $pdo->prepare("DELETE FROM product WHERE product_id = :id");
+                $stmt->execute([':id' => $_POST['product_id']]);
+
+                // Commit the transaction
+                $pdo->commit();
+                echo "Product deleted successfully!";
+            } catch (PDOException $e) {
+                // Rollback on error
+                $pdo->rollBack();
+                echo "<script>alert('Error deleting product: " . $e->getMessage() . "');</script>";
+            }
             exit;
         }
+
 
         // Edit Product
         elseif ($_POST['action'] === 'edit') {
