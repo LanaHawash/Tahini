@@ -8,7 +8,7 @@ $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
-    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product where type='Tahini'");
+    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product where type='Whole Sesame'");
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database error: " . $e->getMessage());

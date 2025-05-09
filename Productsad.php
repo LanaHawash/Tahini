@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -200,6 +200,8 @@ try {
                     <option value="all" <?= $filterType === 'all' ? 'selected' : '' ?>>All</option>
                     <option value="Tahini" <?= $filterType === 'Tahini' ? 'selected' : '' ?>>Tahini</option>
                     <option value="Halva" <?= $filterType === 'Halva' ? 'selected' : '' ?>>Halva</option>
+                    <option value="Whole Sesame" <?= $filterType === 'Whole Sesame' ? 'selected' : '' ?>>Whole Sesame</option>
+
                 </select>
                 <button class="btn-submit1" onclick="applyFilter()">Apply Filter</button>
             </div>
@@ -241,6 +243,7 @@ try {
                             <option value="">Select Type</option>
                             <option value="Tahini">Tahini</option>
                             <option value="Halva">Halva</option>
+                            <option value="Whole Sesame">Whole Sesame</option>
                         </select>
                     </div>
                     <div class="form-group">

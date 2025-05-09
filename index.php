@@ -48,10 +48,10 @@
                         <img src="img/sub2.png" alt="Tahini 0.5kg">
                         <p>Tahini 0.5kg <span class="arrow">→</span></p>
                     </div>
-                    <div class="media-card">
+                    <a class="media-card" href="hole_sesame.php">
                         <img src="img/sub3.png" alt="Tahini Whole Sesame">
                         <p>Tahini Whole Sesame <span class="arrow">→</span> </p>
-                    </div>
+                    </a>
                     <a class="media-card" href="halva.php">
                         <img src="img/sub4.png" alt="Halva">
                         <p>Halva <span class="arrow">→</span></p>
@@ -163,7 +163,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
