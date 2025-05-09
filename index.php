@@ -58,7 +58,7 @@
                     </a>
                 </div>
             </li>            <li class="dropdown">
-                <a href="index.php" class="nav-link">Explore</a>
+                <a href="ourStory.php" class="nav-link">Explore</a>
                 <ul class="explore-menu" id="explore-submenu">
                     <li class="pe"><a href="ourStory.php">Our Story</a></li>
                     <li class="pe"><a href="./FAQ.php">FAQ'S</a></li>

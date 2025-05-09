@@ -174,5 +174,6 @@ try {
         document.body.classList.remove('modal-open');
     }
 </script>
+<script src="scripts/script.js"></script>
 </body>
 </html>
