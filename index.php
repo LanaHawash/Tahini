@@ -163,7 +163,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -183,7 +183,7 @@ die("Database error: " . $e->getMessage());
             <button class="slider-btn right">&gt;</button>
         </div>
     </div>
-    <button class="collection-btn">Collection</button>
+    <button class="collection-btn" onclick="window.location.href='catalog.php';">Collection</button>
 
     <div class="product-slider">
         <div class="product-list">

@@ -286,7 +286,26 @@ header {
         width: 100%;
         margin: 0;
     }
+    .stat-card {
 
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /*display: flex;*/
+        justify-content: center;
+        /*padding: 15px;*/
+        /*width: 500px;*/
+        width: 40%;
+        height: 100px;
+        /*margin-ht: 20px;*/
+        /*margin-left: 22px;*/
+    }
+
+    .stat-card i {
+        margin: 0;
+        display: flex;
+        /*width: 20px;*/
+    }
 
 }
 
@@ -344,7 +363,30 @@ header {
         display: flex;
     }
 
+    .stat-card {
 
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /*display: flex;*/
+        justify-content: center;
+        /*padding: 15px;*/
+        /*width: 500px;*/
+        width: 40%;
+        height: 100px;
+        /*margin-ht: 20px;*/
+        /*margin-left: 22px;*/
+    }
+
+    .stat-card i {
+        margin: 0;
+        display: flex;
+        /*width: 20px;*/
+    }
+
+    .charts-section {
+        width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -364,7 +406,9 @@ header {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
-
+    .stat-card {
+        padding: 10px;
+    }
 }
 
 /***********************************************************************************************************/
@@ -563,6 +607,27 @@ header {
         margin: 0
 
 
+    }
+
+    .stat-card {
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /*display: flex;*/
+        justify-content: center;
+        /*padding: 15px;*/
+        /*width: 500px;*/
+        width: 40%;
+        height: 100px;
+        /*margin-ht: 20px;*/
+        /*margin-left: 22px;*/
+    }
+
+    .stat-card i {
+        margin: 0;
+        display: flex;
+        /*width: 20px;*/
     }
 }
 /*////////////////////////////////////////////////////////////////////////////////////*/

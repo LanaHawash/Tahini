@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -80,7 +80,7 @@ try {
 
         <section class="dashboard-stats">
 
-            <div class="stat-card" style="width: 349px;">
+            <div class="stat-card" style="width: 335px">
                 <i class="fas fa-users"></i>
                 <div>
                     <h3><?php echo $total_customers; ?></h3>
