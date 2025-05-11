@@ -616,7 +616,7 @@ h1 {
     background: #f8f8f8;
     padding: 10px;
     border-radius: 10px;
-    width: 190px;
+    width: 250px;
     align-items: center;
 
     height: 80px;
@@ -649,6 +649,7 @@ h1 {
     .slider-btn {
         display: none;
     }
+
 }
 
 

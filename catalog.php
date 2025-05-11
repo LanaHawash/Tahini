@@ -3,7 +3,7 @@ session_start();
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -95,7 +95,7 @@ try {
         <img id="modalImage" src="" alt="Product Image">
     </div>
     <div class="modal-content" >
-        <span class="close-button" onclick="closeModal()">×</span>
+        <span class="close-button" onclick="closeModall()">×</span>
 
         <h2 id="modalTitle" class="title" ></h2>
         <h4 class="description" id="modalDescription" ></h4>
@@ -169,7 +169,7 @@ try {
             });
     }
 
-    function closeModal() {
+    function closeModall() {
         document.getElementById('productModal').style.display = 'none';
         document.body.classList.remove('modal-open');
     }

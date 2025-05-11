@@ -1,10 +1,14 @@
 .containerNew {
-    max-width: 800px;
+    max-width: 725px;
     background: #fff;
     margin: 40px auto;
     padding: 30px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    border-radius: 35px;
+}
+.containerNew p{
+    padding-top: 5px;
+    font-weight: bold;
 }
 h2 {
     text-align: center;
@@ -17,12 +21,13 @@ label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    padding-top: 5px;
 }
 input[type="text"], input[type="email"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 25px;
     box-sizing: border-box;
 }
 .cart-item {
@@ -31,6 +36,7 @@ input[type="text"], input[type="email"] {
 }
 .cart-item h4 {
     margin: 5px 0;
+    font-size: 1.5rem;
 }
 .cart-summary {
     margin-top: 20px;
@@ -41,17 +47,33 @@ input[type="text"], input[type="email"] {
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #28a745;
-    border: none;
-    border-radius: 6px;
-    color: white;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 35px;
     font-size: 1em;
     cursor: pointer;
-    margin-top: 20px;
+    border: solid black;
+    box-shadow: 3px 3px 5px black;
+    transition: all 0.3s ease-in-out;
+
 }
 .submit-btn:hover {
-    background-color: #218838;
+    background: #ffffff;
+    color: #000000;
 }
+.hh{
+    background-color:#dc3545;
+    color: white;
+    border: solid #dc3545;
+    box-shadow: 3px 3px 3px #dc3545;
+
+}
+.hh:hover {
+    background: #ffffff;
+    color:#dc3545;
+}
+
 .qty-btn {
     padding: 6px 12px;
     background-color: #eee;
@@ -59,10 +81,17 @@ input[type="text"], input[type="email"] {
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 22px;
+    box-shadow: 3px 3px #333333 ;
     margin: 5px;
 }
 
 .qty-btn:hover {
     background-color: #ddd;
+}
+.product-image {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 8px;
 }

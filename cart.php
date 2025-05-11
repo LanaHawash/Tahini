@@ -5,7 +5,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 session_start();
 
@@ -20,7 +20,7 @@ try {
     $pdo = new PDO($dsn, $user, $pass);
     // Fetch cart items for the customer
     $stmt = $pdo->prepare("
-        SELECT p.product_id, p.product_name, p.description, p.price, c.quantity
+        SELECT p.product_id, p.product_name, p.description, p.price,p.image, c.quantity
         FROM cart c
         JOIN product p ON c.product_id = p.product_id
         WHERE c.customer_id = :customer_id
@@ -129,6 +129,7 @@ try {
             $total += $lineTotal;
 
             echo "<div class='cart-item'>
+             <img src='{$item['image']}' alt='{$item['product_name']}' class='product-image'>
                 <h4>{$item['product_name']}</h4>
                 <p>{$item['description']}</p>
                 <p>Price: {$item['price']} NIS</p>
@@ -142,12 +143,12 @@ try {
                 <p>Subtotal: " . number_format($lineTotal, 2) . " NIS</p>
                 <form method='POST' action='php/remove_from_cart.php'>
                     <input type='hidden' name='product_id' value='{$item['product_id']}'>
-                    <button type='submit' class='submit-btn' style='background-color:#dc3545;'>Remove</button>
+                    <button type='submit' class='submit-btn hh'>Remove</button>
                 </form>
               </div><hr>";
         }
 
-        echo "<h3>Total: " . number_format($total, 2) . " NIS</h3>";
+        echo "<h3 style=' text-align: center; margin-bottom: 11px; margin-top: 11px;'>Total: " . number_format($total, 2) . " NIS</h3>";
     }
     ?>
 
