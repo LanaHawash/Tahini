@@ -102,27 +102,24 @@ try {
 </div>
 
 <!-- Product Modal -->
-<div id="productModal" class="modal ">
+<div id="productModal" class="modal">
     <div class="modal-header">
         <div class="image-section">
             <img id="modalImage" src="" alt="Product Image">
         </div>
-        <div class="modal-content" >
+        <div class="modal-content">
             <span class="close-button" onclick="closeModall()">×</span>
-
-            <h2 id="modalTitle" class="title" ></h2>
-            <h4 class="description" id="modalDescription" ></h4>
+            <h2 id="modalTitle" class="title"></h2>
+            <h4 class="description" id="modalDescription"></h4>
             <p id="modalPrice" class="price"></p>
             <form method="POST" action="php/add_to_cart.php">
-
                 <input type="hidden" name="product_id" id="modalProductId">
-
-                <button type="submit" class="add">Add to cart</button>
+                <!-- Updated the button ID here -->
+                <button type="submit" id="addToCartBtn" class="add">Add to cart</button>
             </form>
         </div>
     </div>
 </div>
-
 
 <footer class="footer">
     <div class="footer-container">
@@ -167,12 +164,32 @@ try {
                     return;
                 }
 
+                // Update modal content
                 document.getElementById('modalImage').src = data.image;
                 document.getElementById('modalTitle').textContent = data.product_name;
-                document.getElementById('modalPrice').textContent = data.price + ' NIS';
+                // document.getElementById('modalPrice').textContent = data.price + ' NIS';
                 document.getElementById('modalDescription').textContent = data.description;
                 document.getElementById('modalProductId').value = data.product_id;
 
+                // Get the Add to Cart button and quantity display
+                const addToCartBtn = document.getElementById('addToCartBtn');
+               // const quantityDisplay = document.getElementById('modalQuantity');
+
+                // Check the product quantity and update the button state
+                if (data.quantity === 0) {
+                    addToCartBtn.disabled = true;
+                    addToCartBtn.style.opacity = 0.5;
+                    addToCartBtn.style.cursor = "not-allowed";
+                    addToCartBtn.textContent = "Out of Stock";
+                } else {
+                    addToCartBtn.disabled = false;
+                    addToCartBtn.style.opacity = 1;
+                    addToCartBtn.style.cursor = "pointer";
+                    addToCartBtn.textContent = "Add to cart";
+
+                }
+
+                // Display the modal
                 document.getElementById('productModal').style.display = 'flex';
                 document.body.classList.add('modal-open');
             })

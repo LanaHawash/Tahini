@@ -37,7 +37,22 @@ try {
     if (!$customer_id) {
         throw new Exception("You must be logged in to add to cart.");
     }
+    $stmt = $pdo->prepare("SELECT quantity FROM product WHERE product_id = :product_id");
+    $stmt->execute([':product_id' => $product_id]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    if (!$product) {
+        throw new Exception("Product not found.");
+    }
+
+    if ($product['quantity'] <= 0) {
+        echo "<script>
+            alert('Sold Out: This product is not available.');
+            window.location.href = '../catalog.php';
+          </script>";
+
+    }
+    else{
     // Check if product is already in cart
     $stmt = $pdo->prepare("SELECT quantity FROM cart WHERE customer_id = :customer_id AND product_id = :product_id");
     $stmt->execute([
@@ -62,9 +77,9 @@ try {
     }
 
     // Redirect to cart or same page
-    header("Location: ../index.php");
+    header("Location: ../catalog.php");
     exit;
-
+}
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }

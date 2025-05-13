@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -13,7 +13,7 @@ try {
     }
 
     $pdo = new PDO($dsn, $user, $pass);
-    $stmt = $pdo->prepare("SELECT product_id, product_name, image, price, description FROM product WHERE product_id = :id");
+    $stmt = $pdo->prepare("SELECT product_id, product_name, image, price,quantity, description FROM product WHERE product_id = :id");
     $stmt->execute([':id' => $_GET['id']]);
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
 

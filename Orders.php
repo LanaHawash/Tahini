@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -100,7 +100,7 @@ try {
                 </a>
             </div>
             <div class="menu-item">
-                <a href="Productsad.php" class="activeM">
+                <a href="Productsad.php">
                     <i class="fa-solid fa-bowl-food"></i>
                     <span>Products</span>
                 </a>
@@ -111,8 +111,8 @@ try {
                     <span>Customers</span>
                 </a>
             </div>
-            <div class="menu-item">
-                <a href="Orders.php">
+            <div class="menu-item" >
+                <a href="Orders.php" class="activeM">
                     <i class="fa-solid fa-basket-shopping"></i>
                     <span>Orders</span>
                 </a>

@@ -11,7 +11,7 @@ $action = $_POST['action'];
 
 $dsn = "pgsql:host=localhost;dbname=tahini_db";
 $user = "postgres";
-$pass = "12217434";
+$pass = "12217336";
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
