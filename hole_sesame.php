@@ -45,15 +45,28 @@ try {
         <div class="menu-toggle" onclick="toggleMenu()">
             <i class="fa-solid fa-bars"></i>
         </div>
+
         <ul class="nav-menu">
-            <li><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="dropdown">
                 <a href="catalog.php" id="catalog-btn" class="nav-link">Catalog</a>
                 <div class="submenu" id="submenu">
-                    <a class="media-card" href="tahini.php"><img src="img/sub1.png"><p>Tahini 1kg <span class="arrow">→</span></p></a>
-                    <div class="media-card"><img src="img/sub2.png"><p>Tahini 0.5kg <span class="arrow">→</span></p></div>
-                    <div class="media-card"><img src="img/sub3.png"><p>Tahini Whole Sesame <span class="arrow">→</span></p></div>
-                    <a class="media-card" href="halva.php"><img src="img/sub4.png"><p>Halva <span class="arrow">→</span></p></a>
+                    <a class="media-card" href="tahini.php">
+                        <img src="img/sub1.png" alt="Tahini 1kg">
+                        <p>Tahini 1kg <span class="arrow">→</span></p>
+                    </a>
+                    <a class="media-card" href="half.php">
+                        <img src="img/sub2.png" alt="Tahini 0.5kg">
+                        <p>Tahini 0.5kg <span class="arrow">→</span></p>
+                    </a>
+                    <a class="media-card" href="hole_sesame.php">
+                        <img src="img/sub3.png" alt="Tahini Whole Sesame">
+                        <p>Tahini Whole Sesame <span class="arrow">→</span> </p>
+                    </a>
+                    <a class="media-card" href="halva.php">
+                        <img src="img/sub4.png" alt="Halva">
+                        <p>Halva <span class="arrow">→</span></p>
+                    </a>
                 </div>
             </li>
             <li class="dropdown">

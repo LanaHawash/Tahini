@@ -8,7 +8,7 @@ $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
-    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product where type='Tahini'");
+    $stmt = $pdo->query("SELECT product_id, product_name, image, description FROM product where type='Tahini 0.5Kg'");
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database error: " . $e->getMessage());
@@ -70,7 +70,7 @@ try {
                 </div>
             </li>
             <li class="dropdown">
-                <a href="index.php" class="nav-link">Explore</a>
+                <a href="ourStory.php" class="nav-link">Explore</a>
                 <ul class="explore-menu" id="explore-submenu">
                     <li class="pe"><a href="ourStory.php">Our Story</a></li>
                     <li class="pe"><a href="./FAQ.php">FAQ'S</a></li>
