@@ -128,9 +128,9 @@ try {
         <div class="footer-info">
             <h3>Information</h3>
             <ul>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Catalog</a></li>
-                <li><a href="#">Our Story</a></li>
+
+                <li><a href="catalog.php">Catalog</a></li>
+                <li><a href="ourStory.php">Our Story</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Refund Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>

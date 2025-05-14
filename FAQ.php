@@ -225,14 +225,14 @@
     <!-- Left Section: Information & Contact -->
     <div class="footer-info">
       <h3>Information</h3>
-      <ul>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Catalog</a></li>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Refund Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
+        <ul>
+
+            <li><a href="catalog.php">Catalog</a></li>
+            <li><a href="ourStory.php">Our Story</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
       <div class="footer-contact">
         <p><a href="tel:+972585218207">+ (972) 585218207</a></p>
         <p><a href="mailto:jad@harbracha.com">jad@harbracha.com</a></p>
