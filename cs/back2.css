@@ -474,7 +474,7 @@ header .navbar {
 
 .footer-contact{
     margin-top: 1rem;
-
+    margin-left: 15px;
 
 
 }
@@ -498,6 +498,8 @@ header .navbar {
 .footer-newsletter {
     flex: 1;
     min-width: 250px;
+
+    margin-left: 347px;
 }
 
 .footer-newsletter h3 {
