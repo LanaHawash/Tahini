@@ -430,7 +430,7 @@ header {
     max-height: 2000px;
     width: 1000px;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 10px;
 }
 
 .add-product h3, .products-list h3 {
