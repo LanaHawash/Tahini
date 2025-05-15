@@ -577,5 +577,9 @@ header .navbar {
         justify-content: center;
         margin-top: 1rem;
     }
+
+.footer-newsletter{
+    margin-left: 0;
+}
 }
 

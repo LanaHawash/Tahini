@@ -169,6 +169,7 @@
 
 
 
+<!-- Left Section: Information & Contact -->
 <footer class="footer">
     <div class="footer-container">
         <!-- Left Section: Information & Contact -->
@@ -178,31 +179,47 @@
 
                 <li><a href="catalog.php">Catalog</a></li>
                 <li><a href="ourStory.php">Our Story</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Refund Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <li><a href="contactUs.php">Contact Us</a></li>
+                <!--        <li><a href="#">Refund Policy</a></li>-->
+                <!--        <li><a href="#">Terms of Service</a></li>-->
             </ul>
-            <div class="footer-contact">
-                <p><a href="tel:+972585218207">+ (972) 585218207</a></p>
-                <p><a href="mailto:jad@harbracha.com">jad@harbracha.com</a></p>
-            </div>
-        </div>
-
-        <!-- Right Section: Newsletter & Social Media -->
-        <div class="footer-newsletter">
-            <h3>Stay in the loop with our weekly newsletter</h3>
-            <form action="#">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">➜</button>
-            </form>
+            <!--      <div class="footer-contact">-->
+            <!--        <p><a href="tel:+970595061620">+ (970) 595061620</a></p>-->
+            <!--        <p><a href="mailto:lana@harbracha.com">lana@harbracha.com</a></p>-->
+            <!--        <p><a href="tel:+972522779569">+ (972) 522779569</a></p>-->
+            <!--        <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>-->
+            <!--      </div>-->
             <div class="social-icons">
                 <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
+
+        <!-- Right Section: Newsletter & Social Media -->
+        <div class="footer-newsletter">
+            <h3>Stay in touch if something went wrong?</h3>
+            <!--      <form action="#">-->
+            <!--        <input type="email" placeholder="Enter your email" required>-->
+            <!--        <button type="submit">➜</button>-->
+            <!--      </form>-->
+            <div class="footer-contact">
+                <p><a href="tel:+970595061620">+ (970) 595061620</a></p>
+                <p><a href="tel:+972522779569">+ (972) 522779569</a></p>
+                <p><a href="mailto:lana@harbracha.com">lana@harbracha.com</a></p>
+
+                <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>
+
+            </div>
+            <!--      <div class="social-icons">-->
+            <!--        <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>-->
+            <!--        <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>-->
+            <!--        <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>-->
+            <!--      </div>-->
+        </div>
     </div>
 </footer>
+
 
 <script src="scripts/script.js"></script>
 

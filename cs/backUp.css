@@ -448,7 +448,7 @@ header .navbar {
 }
 
 .footer-info h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
@@ -474,58 +474,73 @@ header .navbar {
 }
 
 .footer-contact{
-    margin-top: 3rem;
-
+    margin-top: 1rem;
+    margin-left: 15px;
 
 
 }
+.footer-contact p{
+    margin-bottom: 0.5rem;
+}
+
 .footer-info .footer-contact p {
     padding: 3px;
 
 }
-
+.footer-contact p a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+}
+.footer-contact p a:hover {
+    color: #fff;
+}
 /* Right Section: Newsletter */
 .footer-newsletter {
     flex: 1;
     min-width: 250px;
+
+    margin-left: 347px;
 }
 
 .footer-newsletter h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-.footer-newsletter form {
-    display: flex;
-    background: #222;
-    border-radius: 5px;
-    overflow: hidden;
-}
 
-.footer-newsletter input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    background: #333;
-    color: #fff;
-    outline: none;
-}
+/*.footer-newsletter form {*/
+/*    display: flex;*/
+/*    background: #222;*/
+/*    border-radius: 5px;*/
+/*    overflow: hidden;*/
+/*}*/
 
-.footer-newsletter button {
-    background: #fff;
-    color: #000;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
+/*.footer-newsletter input {*/
+/*    flex: 1;*/
+/*    padding: 10px;*/
+/*    border: none;*/
+/*    background: #333;*/
+/*    color: #fff;*/
+/*    outline: none;*/
+/*}*/
 
-.footer-newsletter button:hover {
-    background: #ccc;
-}
+/*.footer-newsletter button {*/
+/*    background: #fff;*/
+/*    color: #000;*/
+/*    border: none;*/
+/*    padding: 10px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.footer-newsletter button:hover {*/
+/*    background: #ccc;*/
+/*}*/
 
 /* Social Media Icons */
 .social-icons {
-    margin-top: 14rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
 
 
 }
@@ -563,5 +578,11 @@ header .navbar {
         justify-content: center;
         margin-top: 1rem;
     }
+
+    .footer-newsletter{
+        margin-left: 0;
+    }
 }
+
+
 
