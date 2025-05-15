@@ -169,11 +169,11 @@
         <input type="email" placeholder="Enter your email" required>
         <button type="submit">➜</button>
       </form>
-      <div class="social-icons">
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-      </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
+        </div>
     </div>
   </div>
 </footer>
