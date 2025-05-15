@@ -3,7 +3,7 @@ session_start();
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -122,10 +122,8 @@ try {
 </div>
 
 
-<!-- Left Section: Information & Contact -->
 <footer class="footer">
     <div class="footer-container">
-        <!-- Left Section: Information & Contact -->
         <div class="footer-info">
             <h3>Information</h3>
             <ul>
@@ -133,15 +131,9 @@ try {
                 <li><a href="catalog.php">Catalog</a></li>
                 <li><a href="ourStory.php">Our Story</a></li>
                 <li><a href="contactUs.php">Contact Us</a></li>
-                <!--        <li><a href="#">Refund Policy</a></li>-->
-                <!--        <li><a href="#">Terms of Service</a></li>-->
+
             </ul>
-            <!--      <div class="footer-contact">-->
-            <!--        <p><a href="tel:+970595061620">+ (970) 595061620</a></p>-->
-            <!--        <p><a href="mailto:lana@harbracha.com">lana@harbracha.com</a></p>-->
-            <!--        <p><a href="tel:+972522779569">+ (972) 522779569</a></p>-->
-            <!--        <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>-->
-            <!--      </div>-->
+
             <div class="social-icons">
                 <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
@@ -149,13 +141,9 @@ try {
             </div>
         </div>
 
-        <!-- Right Section: Newsletter & Social Media -->
         <div class="footer-newsletter">
             <h3>Stay in touch if something went wrong?</h3>
-            <!--      <form action="#">-->
-            <!--        <input type="email" placeholder="Enter your email" required>-->
-            <!--        <button type="submit">➜</button>-->
-            <!--      </form>-->
+
             <div class="footer-contact">
                 <p><a href="tel:+970595061620">+ (970) 595061620</a></p>
                 <p><a href="tel:+972522779569">+ (972) 522779569</a></p>
@@ -164,11 +152,6 @@ try {
                 <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>
 
             </div>
-            <!--      <div class="social-icons">-->
-            <!--        <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>-->
-            <!--        <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>-->
-            <!--        <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>-->
-            <!--      </div>-->
         </div>
     </div>
 </footer>
@@ -188,7 +171,7 @@ try {
                 // Update modal content
                 document.getElementById('modalImage').src = data.image;
                 document.getElementById('modalTitle').textContent = data.product_name;
-                // document.getElementById('modalPrice').textContent = data.price + ' NIS';
+                document.getElementById('modalPrice').textContent = data.price + ' NIS';
                 document.getElementById('modalDescription').textContent = data.description;
                 document.getElementById('modalProductId').value = data.product_id;
 

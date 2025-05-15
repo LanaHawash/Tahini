@@ -3,7 +3,7 @@ session_start();
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -191,7 +191,7 @@ try {
                 // Update modal content
                 document.getElementById('modalImage').src = data.image;
                 document.getElementById('modalTitle').textContent = data.product_name;
-                // document.getElementById('modalPrice').textContent = data.price + ' NIS';
+                document.getElementById('modalPrice').textContent = data.price + ' NIS';
                 document.getElementById('modalDescription').textContent = data.description;
                 document.getElementById('modalProductId').value = data.product_id;
 

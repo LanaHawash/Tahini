@@ -85,6 +85,140 @@
        i{
            color: #0a0b0a;
        }
+
+
+       /* Footer Styling */
+       .footer {
+           background: #181818;
+           color: #fff;
+           padding: 40px 20px;
+       }
+
+       .footer-container {
+           display: flex;
+           justify-content: space-between;
+           flex-wrap: wrap;
+           max-width: 1200px;
+           margin: auto;
+       }
+
+       /* Left Section */
+       .footer-info {
+           flex: 1;
+           min-width: 250px;
+       }
+
+       .footer-info h3 {
+           font-size: 20px;
+           margin-bottom: 10px;
+       }
+
+       .footer-info ul {
+           list-style: none;
+           padding: 0;
+       }
+
+       .footer-info ul li {
+           margin-bottom: 8px;
+       }
+
+       .footer-info ul li a,
+       .footer-info p a {
+           color: #ccc;
+           text-decoration: none;
+           font-size: 20px;
+       }
+
+       .footer-info ul li a:hover,
+       .footer-info p a:hover {
+           color: #fff;
+       }
+
+       .footer-contact{
+           margin-top: 1rem;
+           margin-left: 15px;
+
+
+       }
+       .footer-contact p{
+           margin-bottom: 0.5rem;
+       }
+
+       .footer-info .footer-contact p {
+           padding: 3px;
+
+       }
+       .footer-contact p a {
+           color: #ccc;
+           text-decoration: none;
+           font-size: 18px;
+       }
+       .footer-contact p a:hover {
+           color: #fff;
+       }
+       /* Right Section: Newsletter */
+       .footer-newsletter {
+           flex: 1;
+           min-width: 250px;
+
+           margin-left: 347px;
+       }
+
+       .footer-newsletter h3 {
+           font-size: 20px;
+           margin-bottom: 10px;
+       }
+
+
+
+       /* Social Media Icons */
+       .social-icons {
+           margin-top: 1.5rem;
+           padding-bottom: 1rem;
+
+
+       }
+
+       .social-icons a {
+           color: #fff;
+           font-size: 20px;
+           margin-right: 10px;
+           text-decoration: none;
+       }
+
+       .social-icons a:hover {
+           color: #ccc;
+       }
+
+       /* Responsive Design */
+       @media (max-width: 768px) {
+           .footer-container {
+               flex-direction: column;
+               text-align: center;
+               margin-top: 2rem;
+           }
+           .footer-contact{
+               margin-top: 1rem;
+               margin-bottom: 1rem;
+
+           }
+
+           .footer-newsletter form {
+
+               justify-content: center;
+           }
+
+           .social-icons {
+               justify-content: center;
+               margin-top: 1rem;
+           }
+
+           .footer-newsletter{
+               margin-left: 0;
+           }
+       }
+
+
    </style>
 </head>
 <body>
@@ -113,5 +247,59 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Left Section: Information & Contact -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left Section: Information & Contact -->
+        <div class="footer-info">
+            <h3>Information</h3>
+            <ul>
+
+                <li><a href="catalog.php">Catalog</a></li>
+                <li><a href="ourStory.php">Our Story</a></li>
+                <li><a href="contactUs.php">Contact Us</a></li>
+                <!--        <li><a href="#">Refund Policy</a></li>-->
+                <!--        <li><a href="#">Terms of Service</a></li>-->
+            </ul>
+            <!--      <div class="footer-contact">-->
+            <!--        <p><a href="tel:+970595061620">+ (970) 595061620</a></p>-->
+            <!--        <p><a href="mailto:lana@harbracha.com">lana@harbracha.com</a></p>-->
+            <!--        <p><a href="tel:+972522779569">+ (972) 522779569</a></p>-->
+            <!--        <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>-->
+            <!--      </div>-->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <!-- Right Section: Newsletter & Social Media -->
+        <div class="footer-newsletter">
+            <h3>Stay in touch if something went wrong?</h3>
+            <!--      <form action="#">-->
+            <!--        <input type="email" placeholder="Enter your email" required>-->
+            <!--        <button type="submit">➜</button>-->
+            <!--      </form>-->
+            <div class="footer-contact">
+                <p><a href="tel:+970595061620">+ (970) 595061620</a></p>
+                <p><a href="tel:+972522779569">+ (972) 522779569</a></p>
+                <p><a href="mailto:lana@harbracha.com">lana@harbracha.com</a></p>
+
+                <p><a href="mailto:zina@harbracha.com">zina@harbracha.com</a></p>
+
+            </div>
+            <!--      <div class="social-icons">-->
+            <!--        <a href="https://www.facebook.com/HarBrachaTahini/"><i class="fa-brands fa-facebook-f"></i></a>-->
+            <!--        <a href="https://www.instagram.com/har_bracha_tahini/"><i class="fab fa-instagram"></i></a>-->
+            <!--        <a href="https://www.tiktok.com/@tahiniharbracha"><i class="fab fa-tiktok"></i></a>-->
+            <!--      </div>-->
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>

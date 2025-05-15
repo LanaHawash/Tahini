@@ -5,7 +5,7 @@ session_start();
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 }
 
 // Fetch all customers
-$stmt = $pdo->prepare("SELECT * FROM users");
+$stmt = $pdo->prepare("SELECT * FROM users where role='user'");
 $stmt->execute();
 $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
