@@ -143,7 +143,7 @@ try {
                     <button type='submit' name='action' value='increase' class='qty-btn'>+</button>
                 </form>
                 <p>Subtotal: " . number_format($lineTotal, 2) . " NIS</p>
-                <form method='POST' action='php/remove_from_cart.php'>
+                <form method='POST' action='php/remove_from_cart.php' onsubmit='return confirmDelete();'>
                     <input type='hidden' name='product_id' value='{$item['product_id']}'>
                     <button type='submit' class='submit-btn hh'>Remove</button>
                 </form>
@@ -225,7 +225,9 @@ try {
         </div>
     </div>
 </footer>
-
+<script> function confirmDelete() {
+        return confirm("Are you sure you want to delete this product?");
+    }</script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

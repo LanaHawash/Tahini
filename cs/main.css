@@ -479,7 +479,7 @@ h1 {
     align-items: center;
     padding: 12px 24px;
     border-radius: 30px;
-    cursor: not-allowed;
+    cursor: pointer;
     margin: 20px 0;
     border: none;
 }
@@ -770,3 +770,30 @@ h1 {
 
 
 
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    padding-top: 1rem;
+}
+
+.info-box {
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 30%;
+    text-align: center;
+}
+.info-box::before{
+
+}
+.info-box h3 {
+    text-align: center;
+}
+
+.info-box p {
+    margin: 10px 0 0;
+}

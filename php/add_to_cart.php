@@ -76,9 +76,11 @@ try {
             ]);
     }
 
-    // Redirect to cart or same page
-    header("Location: ../catalog.php");
-    exit;
+        echo "<script>
+        alert('Product added successfully! please continue shopping.<3');
+        window.location.href = '../catalog.php';
+    </script>";
+        exit;
 }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();

@@ -272,6 +272,26 @@ cartContent.innerHTML = cartItems.map(item => `
     </div>
 
 </div>
+
+
+<div class="info-container">
+    <div class="info-box">
+        <i class="fas fa-headset icon"></i>
+        <h3>Customer service</h3>
+        <p>It’s not actually free we just price it into the products.</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-truck icon"></i>
+        <h3>Fast Free Shipping</h3>
+        <p>Yes, We do offer Free shipping!</p>
+    </div>
+    <div class="info-box">
+        <i class="fas fa-lock icon"></i>
+        <h3>Secure payment</h3>
+        <p>Your payment information is processed securely</p>
+    </div>
+</div>
+
 <!-- Left Section: Information & Contact -->
 <footer class="footer">
     <div class="footer-container">
