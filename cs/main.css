@@ -797,3 +797,85 @@ h1 {
 .info-box p {
     margin: 10px 0 0;
 }
+
+.pip {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.review{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.sid {
+    display: none;
+    padding: 20px;
+    animation: fade 1s ease-in-out;
+}
+.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.quote {
+    font-size: 1.7rem;
+    margin: 20px 0;
+    color: #000;
+    font-weight: bolder;
+    font-style: italic;
+}
+.author {
+    font-size: 1rem;
+    font-style: italic;
+    color: #333;
+}
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.active-dot {
+    background-color: #ffffff;
+    border: 3px solid black;
+}
+@media (max-width: 600px) {
+    .quote {
+        font-size: 1rem;
+    }
+    .author {
+        font-size: 0.8rem;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}

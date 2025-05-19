@@ -165,7 +165,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -271,6 +271,61 @@ cartContent.innerHTML = cartItems.map(item => `
         </div>
     </div>
 
+</div>
+
+<div class="pip">
+    <div class="review">
+        <h1>Review</h1>
+    </div>
+    <div class="slideshow-container">
+        <div class="sid active">
+            <div class="quote">"Best Tahini I’ve Ever Had!" <br> "I’ve tried many brands of tahini, but Har Bracha is on another level! The flavor is so rich and smooth, and it’s perfect for everything – from hummus to salad dressings. Plus, I love that it’s made with all-natural ingredients."</div>
+            <div class="author">— Sarah T.</div>
+        </div>
+        <div class="sid">
+            <div class="quote">"Amazing Quality and Taste" <br>  "Har Bracha Tahini is hands down the best tahini I’ve found. The texture is creamy and easy to work with, and the taste is just pure sesame goodness. It makes a huge difference in all my recipes. I highly recommend this tahini to anyone who loves authentic flavors!"</div>
+            <div class="author">— John M.</div>
+        </div>
+        <div class="sid">
+            <div class="quote">"Tahini of a quality I have never seen before. I have been using Har Bracha tahini for several months, and the quality is simply amazing."</div>
+            <div class="author">— Noa L.</div>
+        </div>
+        <div class="sid">
+            <div class="quote">"The best product on the market <br> Har Bracha tahini is the most delicious tahini I've ever tried."</div>
+            <div class="author">— David D.</div>
+        </div>
+        <div class="dots">
+            <span class="dot active-dot" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.sid');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active-dot', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 30000); // Auto-slide every 4 seconds
+    </script>
 </div>
 
 

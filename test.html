@@ -11,7 +11,7 @@
            font-family: Arial, sans-serif;
            background: #fafafa;
            margin: 0;
-           padding: 2rem;
+
        }
 
        .product-container {
@@ -85,7 +85,74 @@
        i{
            color: #0a0b0a;
        }
-
+       .pip {
+           font-family: Arial, sans-serif;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 70vh;
+           margin: 0;
+           background-color: transparent;
+       }
+       .slideshow-container {
+           position: relative;
+           width: 90%;
+           max-width: 800px;
+           margin: auto;
+           text-align: center;
+       }
+       .slide {
+           display: none;
+           padding: 20px;
+           animation: fade 1s ease-in-out;
+       }
+       .active {
+           display: block;
+       }
+       @keyframes fade {
+           from {opacity: 0;}
+           to {opacity: 1;}
+       }
+       .quote {
+           font-size: 1.7rem;
+           margin: 20px 0;
+           color: #000;
+           font-weight: bolder;
+           font-style: italic;
+       }
+       .author {
+           font-size: 1rem;
+           font-style: italic;
+           color: #333;
+       }
+       .dots {
+           text-align: center;
+           margin-top: 10px;
+       }
+       .dot {
+           height: 12px;
+           width: 12px;
+           margin: 0 4px;
+           background-color: #000;
+           border-radius: 50%;
+           display: inline-block;
+           cursor: pointer;
+       }
+       .active-dot {
+           background-color: #555;
+       }
+       @media (max-width: 600px) {
+           .quote {
+               font-size: 1rem;
+           }
+           .author {
+               font-size: 0.8rem;
+           }
+           .dot {
+               height: 10px;
+               width: 10px;
+           }
+       }
 
        /* Footer Styling */
        .footer {
@@ -246,6 +313,55 @@
 
         </div>
     </div>
+</div>
+
+
+
+<div class="pip">
+<div class="slideshow-container">
+    <div class="slide active">
+        <div class="quote">""I’ve tried many brands of tahini, but Har Bracha is on another level! The flavor is so rich and smooth, and it’s perfect for everything – from hummus to salad dressings. Plus, I love that it’s made with all-natural ingredients.""</div>
+        <div class="author">— Abdallah Wasef - Founder of AWS, & Har Bracha Tahini</div>
+    </div>
+    <div class="slide">
+        <div class="quote">"Success doesn’t come from what you do occasionally, it comes from what you do consistently."</div>
+        <div class="author">— Marie Forleo</div>
+    </div>
+    <div class="slide">
+        <div class="quote">"The only limit to our realization of tomorrow is our doubts of today."</div>
+        <div class="author">— Franklin D. Roosevelt</div>
+    </div>
+    <div class="dots">
+        <span class="dot active-dot" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+            dots[i].classList.toggle('active-dot', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 30000); // Auto-slide every 4 seconds
+</script>
 </div>
 
 
