@@ -813,7 +813,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
     text-align: center;
 }
 .slideshow-container {
@@ -821,6 +821,8 @@ h1 {
     width: 100%;
     max-width: 800px;
     margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
