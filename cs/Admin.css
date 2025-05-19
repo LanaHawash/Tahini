@@ -13,6 +13,8 @@ body {
     background: var(--bg-body);
     margin: 0;
 }
+
+
 .page-wrapper {
     display: flex;
 }
@@ -122,9 +124,9 @@ body {
 }
 
 .main-content {
-    margin-left: 270px;
-    padding: 20px;
-    width: calc(100% - 270px);
+    margin-left: 236px;
+    padding: 50px;
+    width: calc(100% - 236px);
 }
 
 header {
@@ -135,27 +137,30 @@ header {
     background-color: var(--white);
     box-shadow: var(--shadow);
     border-radius: 60px;
+    margin-left: auto;
 }
 
 
 .dashboard-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    display: grid
+;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-top: 20px;
-    width: 1200px;
-    margin-left: 15px;
+    width: 1000px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .stat-card {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 35px;
     background: linear-gradient(135deg, #151515, #ffffff);
     color: #ffffff;
     box-shadow: var(--shadow);
     border-radius: 27px;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -426,7 +431,6 @@ header {
 }
 
 .add-product{
-
     max-height: 2000px;
     width: 1000px;
     align-items: center;

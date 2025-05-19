@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217336';
+$pass = '12217434';
 $dsn = "pgsql:host=$host;dbname=$db";
 try {
     // Create a new PDO instance

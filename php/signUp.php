@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'tahini_db';
 $user = 'postgres';
-$password = '12217336';
+$password = '12217434';
 
 
 
