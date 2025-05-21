@@ -38,6 +38,7 @@
     width: 100%;
     border-radius: 5px;
     height: auto;
+    mix-blend-mode: color;
 }
 
 
@@ -277,4 +278,40 @@
 
 body.modal-open {
     overflow: hidden;
+}
+@media (max-width: 768px) {
+    .modal-header {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+
+    .image-section,
+    .modal-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .image-section img {
+        max-height: 300px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .description,
+    .price {
+        font-size: 1rem;
+    }
+
+    .add {
+        font-size: 1rem;
+    }
+
+    .close-button {
+        top: 1rem;
+        right: 1rem;
+    }
 }
