@@ -144,7 +144,7 @@
 </div>
 <div class="modal" id="tahiniModal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal('tahiniModal')"> &times;</span>
+        <span class="close" onclick="closeModal('tahiniModal')"><i class="fa-solid fa-xmark"></i></span>
         <h2>Tahini</h2>
         <p><strong>Purity - </strong> We prioritize natural ingredients, using only the finest sesame seeds to create a tahini that’s pure, flavorful, and rich in nutrients.</p>
         <p><strong>Tradition - </strong> Our tahini is crafted with time-honored techniques, preserving the authentic stone-grinding process that brings out the depth of flavor.</p>
@@ -154,7 +154,7 @@
 </div>
 <div class="modal" id="halvaModal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal('halvaModal')">&times;</span>
+        <span class="close" onclick="closeModal('halvaModal')"><i class="fa-solid fa-xmark"></i></span>
         <h2>Halva</h2>
         <p><strong>Craftsmanship - </strong> Our halva is handmade with care, blending quality ingredients to achieve the perfect texture and flavor.</p>
         <p><strong>Authenticity - </strong> We embrace the rich tradition of halva making, honoring recipes and methods that have stood the test of time.</p>
@@ -165,7 +165,7 @@
 
 <div class="modal" id="comingModal">
     <div class="modal-content">
-        <span class="plus close" onclick="closeModal('comingModal')">&times;</span>
+        <span class="plus close" onclick="closeModal('comingModal')"><i class="fa-solid fa-xmark"></i></span>
         <h2>Flavoured Tahini</h2>
         <p>Upcoming, a fresh innovation set to astonish globally.</p>
     </div>

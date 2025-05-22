@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -157,6 +157,7 @@ try {
                 </tr>
                 </thead>
                 <tbody>
+
                 <?php if (count($orders) > 0): ?>
                     <?php foreach ($orders as $row): ?>
                         <tr>
@@ -165,7 +166,7 @@ try {
                             <td><?= htmlspecialchars($row['products']) ?></td>
                             <td><span class="status <?= strtolower($row['status']) ?>"><?= htmlspecialchars($row['status']) ?></span></td>
                             <td><?= htmlspecialchars($row['total_price']) ?>NIS</td>
-                            <td><?= htmlspecialchars($row['order_date']) ?></td>
+                            <td><?= date('Y-m-d', strtotime($row['order_date'])) ?></td>
                             <td>
                                 <button class="btn-action" data-id="<?= $row['order_id'] ?>" data-status="Completed">✔️</button>
                                 <button class="btn-action" data-id="<?= $row['order_id'] ?>" data-status="Pending">🕑</button>

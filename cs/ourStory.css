@@ -175,13 +175,12 @@
 .contentss h2 {
     font-size: 2em;
     font-weight: bold;
-
+margin-bottom: 3px;
 }
 
 .contentss p {
     padding: 10px;
-    font-family: Arial, serif;
-    font-size: 1em;
+    font-size: 1.2rem;
     padding-inline-start: var(60px);
     line-height: 1.6;
 }
@@ -247,7 +246,7 @@
     margin-bottom: 10px;
 }
 .container_menu p{
-    font-size: 24px;
+    font-size: 21.2rem;
 }
 .highlight {
     position: relative;
@@ -358,6 +357,7 @@
 .modal.open {
     display: flex;
     opacity: 1;
+
 }
 
 
@@ -376,12 +376,12 @@
 }
 .modal-content h2 {
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     margin-top: 20px;
 }
 .modal-content p{
     font-size:18px ;
-    margin-bottom: 10px;
+    margin-bottom: 21px;
 
 }
 .modal .open .modal-content {
@@ -399,9 +399,11 @@
     right: 50px;
     width: 30px;
     height: 30px;
-    padding-left:8px;
+    padding-left:10px;
     padding-bottom:8px;
-    font-size: 25px;
+    padding-top: 6px;
+    font-size: 16px;
+    font-weight: lighter;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
@@ -436,7 +438,7 @@ strong{
 .quote-text {
     font-size: 2.35rem;
     font-weight: bold;
-    font-family: sans-serif;
+    font-style: italic;
     margin-bottom: 20px;
 }
 
@@ -598,9 +600,10 @@ strong{
         right: 10px;
         width: 20px;
         height: 20px;
-        padding-left:8px;
+        padding-left:6px;
         padding-bottom:8px;
-        font-size: 18px;
+        padding-top: 5px;
+        font-size: 10px;
 
     }
 
