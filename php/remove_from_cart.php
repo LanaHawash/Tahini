@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 $dsn = "pgsql:host=localhost;dbname=tahini_db";
 $user = "postgres";
-$pass = "12217434";
+$pass = "12217336";
 
 $product_id = $_POST['product_id'];
 $customer_id = $_POST['user_id'];

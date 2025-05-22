@@ -3,7 +3,7 @@
 $host = 'localhost';
 $db = 'tahini_db';
 $user = 'postgres';
-$pass = '12217434';
+$pass = '12217336';
 $dsn = "pgsql:host=$host;dbname=$db";
 
 try {
@@ -12,19 +12,19 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
-$sql_customers = "SELECT COUNT(*) AS total_customers FROM users"; // Assuming "users" is the correct table name
+$sql_customers = "SELECT COUNT(*) AS total_customers FROM users where role='user'";
 $stmt_customers = $pdo->query($sql_customers);
 $row_customers = $stmt_customers->fetch(PDO::FETCH_ASSOC);
 $total_customers = $row_customers['total_customers'];
 
 // Query to count the total number of products
-$sql_products = "SELECT COUNT(*) AS total_products FROM product"; // Assuming "products" is the correct table name
+$sql_products = "SELECT COUNT(*) AS total_products FROM product";
 $stmt_products = $pdo->query($sql_products);
 $row_products = $stmt_products->fetch(PDO::FETCH_ASSOC);
 $total_products = $row_products['total_products'];
 
 // Query to count the total number of orders
-$sql_orders = "SELECT COUNT(*) AS total_orders FROM orders"; // Assuming "orders" is the correct table name
+$sql_orders = "SELECT COUNT(*) AS total_orders FROM orders";
 $stmt_orders = $pdo->query($sql_orders);
 $row_orders = $stmt_orders->fetch(PDO::FETCH_ASSOC);
 $total_orders = $row_orders['total_orders'];

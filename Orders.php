@@ -166,7 +166,7 @@ try {
                             <td><?= htmlspecialchars($row['products']) ?></td>
                             <td><span class="status <?= strtolower($row['status']) ?>"><?= htmlspecialchars($row['status']) ?></span></td>
                             <td><?= htmlspecialchars($row['total_price']) ?>NIS</td>
-                            <td><?= date('Y-m-d', strtotime($row['order_date'])) ?></td>
+                            <td><?= date('Y-m-d H:i', strtotime($row['order_date'])) ?></td>
                             <td>
                                 <button class="btn-action" data-id="<?= $row['order_id'] ?>" data-status="Completed">✔️</button>
                                 <button class="btn-action" data-id="<?= $row['order_id'] ?>" data-status="Pending">🕑</button>
